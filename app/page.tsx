@@ -7,7 +7,6 @@ import { Search } from "lucide-react";
 export default function Home() {
   return (
     <main className="flex-1">
-      {/* Featured Movies as Hero Section */}
       <section className="bg-black pt-0">
         <FeaturedMovies />
       </section>

@@ -1,29 +1,35 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { User, Menu, X, LogIn } from "lucide-react"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { User, Menu, X, LogIn, Search } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const pathname = usePathname()
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Movies", href: "/movies" },
     { name: "Theaters", href: "/theaters" },
     { name: "Offers", href: "/offers" },
-  ]
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-black/80 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full  bg-black/80 backdrop-blur-sm">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
@@ -39,7 +45,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-[#FC174D]",
-                pathname === link.href ? "text-[#FC174D]" : "text-white",
+                pathname === link.href ? "text-[#FC174D]" : "text-white"
               )}
             >
               {link.name}
@@ -47,7 +53,37 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          {/* Desktop Search */}
+          <div className="hidden md:flex items-center relative">
+            {isSearchOpen ? (
+              <div className="relative animate-fadeIn">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <Input
+                  placeholder="Search for movies..."
+                  className="pl-10 bg-gray-800 border-zinc-700 text-white placeholder:text-gray-400  h-9 w-[250px]"
+                  
+                />
+                <button
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+                  onClick={toggleSearch}
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            ) : (
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:text-[#FC174D] hover:bg-transparent"
+                onClick={toggleSearch}
+              >
+                <Search className="h-5 w-5" />
+                <span className="sr-only">Search</span>
+              </Button>
+            )}
+          </div>
+
           <Button
             variant="ghost"
             size="icon"
@@ -64,6 +100,17 @@ export default function Navbar() {
             </Link>
           </Button>
 
+          {/* Mobile Search Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-white hover:text-[#FC174D] hover:bg-transparent"
+            onClick={toggleSearch}
+          >
+            <Search className="h-5 w-5" />
+            <span className="sr-only">Search</span>
+          </Button>
+
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
@@ -71,11 +118,37 @@ export default function Navbar() {
             className="md:hidden text-white hover:text-[#FC174D] hover:bg-transparent"
             onClick={toggleMenu}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
             <span className="sr-only">Toggle menu</span>
           </Button>
         </div>
       </div>
+
+      {/* Mobile Search Bar */}
+      {isSearchOpen && !isMenuOpen && (
+        <div className="md:hidden border-t border-zinc-800 bg-black/80 backdrop-blur-sm">
+          <div className="container py-3 px-4">
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Input
+                placeholder="Search for movies..."
+                className="pl-10 bg-zinc-800 border-zinc-700 text-white placeholder:text-gray-400 focus-visible:ring-[#FC174D] h-9 w-full"
+                autoFocus
+              />
+              <button
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white"
+                onClick={toggleSearch}
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mobile Menu */}
       {isMenuOpen && (
@@ -87,7 +160,7 @@ export default function Navbar() {
                 href={link.href}
                 className={cn(
                   "text-lg font-medium transition-colors hover:text-[#FC174D]",
-                  pathname === link.href ? "text-[#FC174D]" : "text-white",
+                  pathname === link.href ? "text-[#FC174D]" : "text-white"
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -104,5 +177,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }
