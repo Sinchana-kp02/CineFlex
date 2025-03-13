@@ -28,7 +28,7 @@ const featuredMovies = [
   {
     id: "oppenheimer",
     title: "Oppenheimer",
-    image: "/placeholder.svg?height=600&width=1200&query=oppenheimer movie poster",
+    image: "/movies/oppenheimer/landscape.png",
     rating: 8.5,
     releaseDate: "July 21, 2023",
     description:
