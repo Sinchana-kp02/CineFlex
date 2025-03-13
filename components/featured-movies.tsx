@@ -1,10 +1,14 @@
 "use client";
-
-import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Star, Calendar } from "lucide-react";
+import { Star, Calendar } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const featuredMovies = [
   {
@@ -50,81 +54,27 @@ const featuredMovies = [
 ];
 
 export default function FeaturedMovies() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const slideRef = useRef<HTMLDivElement>(null);
-
-  const nextSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % featuredMovies.length);
-  };
-
-  const prevSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + featuredMovies.length) % featuredMovies.length
-    );
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, [currentIndex]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex, isAnimating]);
-
   return (
-    <div className="relative overflow-hidden rounded-xl">
-      <div className="absolute top-1/2 left-4 z-10 -translate-y-1/2">
-        <Button
-          variant="outline"
-          size="icon"
-          className="rounded-full bg-black/50 border-0 text-white hover:bg-black/70"
-          onClick={prevSlide}
-        >
-          <ChevronLeft className="h-6 w-6" />
-          <span className="sr-only">Previous</span>
-        </Button>
-      </div>
-
-      <div className="absolute top-1/2 right-4 z-10 -translate-y-1/2">
-        <Button
-          variant="outline"
-          size="icon"
-          className="rounded-full bg-black/50 border-0 text-white hover:bg-black/70"
-          onClick={nextSlide}
-        >
-          <ChevronRight className="h-6 w-6" />
-          <span className="sr-only">Next</span>
-        </Button>
-      </div>
-
-      <div
-        ref={slideRef}
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+    <div className="featured-slider">
+      <Swiper
+        modules={[Pagination, Navigation, Autoplay]}
+        pagination={{ clickable: true }}
+        navigation={true}
+        loop={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        className="rounded-xl swiper-custom"
       >
-        {featuredMovies.map((movie) => (
-          <div key={movie.id} className="min-w-full">
+        {featuredMovies.map((movie, index) => (
+          <SwiperSlide key={movie.id}>
             <div className="relative h-[400px] md:h-[500px] w-full">
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${movie.image})`,
                   backgroundPosition: movie.alignment,
-                  objectFit: "cover",
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
@@ -161,22 +111,9 @@ export default function FeaturedMovies() {
                 </div>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
-
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-        {featuredMovies.map((_, index) => (
-          <button
-            key={index}
-            className={cn(
-              "w-2 h-2 rounded-full transition-all",
-              currentIndex === index ? "bg-[#FC174D] w-6" : "bg-white/50"
-            )}
-            onClick={() => setCurrentIndex(index)}
-          />
-        ))}
-      </div>
+      </Swiper>
     </div>
   );
 }
