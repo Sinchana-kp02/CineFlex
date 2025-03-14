@@ -1,15 +1,22 @@
-import { Button } from "@/components/ui/button"
-import { Star, Clock, Calendar, MessageCircle, Share2, Heart, Play } from "lucide-react"
-import Link from "next/link"
-import CastCrew from "@/components/cast-crew"
+import { Button } from "@/components/ui/button";
+import {
+  Star,
+  Clock,
+  Calendar,
+  MessageCircle,
+  Share2,
+  Heart,
+} from "lucide-react";
+import Link from "next/link";
+import CastCrew from "@/components/cast-crew";
 
 // Mock data for movie details
 const getMovieDetails = (id: string) => {
   return {
     id,
     title: id === "dune-part-two" ? "Dune: Part Two" : "Movie Title",
-    image: `/placeholder.svg?height=600&width=400&query=${id} movie poster`,
-    backdrop: `/placeholder.svg?height=1080&width=1920&query=${id} movie scene cinematic`,
+    image: `/movies/dune-part-two/poster.jpg`,
+    backdrop: `/movies/dune-part-two/landscape.jpg`,
     rating: 8.7,
     duration: "166 min",
     releaseDate: "March 1, 2024",
@@ -22,54 +29,54 @@ const getMovieDetails = (id: string) => {
       {
         name: "Timothée Chalamet",
         role: "Paul Atreides",
-        image: "/placeholder.svg?height=200&width=200&query=Timothee Chalamet actor headshot",
+        image: "/cast/timothee.png",
       },
-      { name: "Zendaya", role: "Chani", image: "/placeholder.svg?height=200&width=200&query=Zendaya actress headshot" },
+      {
+        name: "Zendaya",
+        role: "Chani",
+        image: "/cast/zendaya.png",
+      },
       {
         name: "Rebecca Ferguson",
         role: "Lady Jessica",
-        image: "/placeholder.svg?height=200&width=200&query=Rebecca Ferguson actress headshot",
+        image: "/cast/Rebecca-Ferguson.png",
       },
       {
         name: "Josh Brolin",
         role: "Gurney Halleck",
-        image: "/placeholder.svg?height=200&width=200&query=Josh Brolin actor headshot",
+        image: "/cast/Josh-Brolin.png",
       },
       {
         name: "Javier Bardem",
         role: "Stilgar",
-        image: "/placeholder.svg?height=200&width=200&query=Javier Bardem actor headshot",
+        image: "/cast/Javier-Bardem.png",
       },
       {
-        name: "Austin Butler",
-        role: "Feyd-Rautha",
-        image: "/placeholder.svg?height=200&width=200&query=Austin Butler actor headshot",
+        name: "Jason Momoa",
+        role: "Duncan Idaho",
+        image: "/cast/Jason-Momoa.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/Way9Dexny3w",
-  }
-}
+  };
+};
 
-export default function MovieDetailsPage({ params }: { params: { id: string } }) {
-  const movie = getMovieDetails(params.id)
+export default function MovieDetailsPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const movie = getMovieDetails(params.id);
 
   return (
     <main className="flex-1">
       {/* Movie Backdrop */}
       <div className="relative h-[50vh] md:h-[70vh] w-full">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${movie.backdrop})` }} />
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${movie.backdrop})` }}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
-
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Button
-            variant="outline"
-            size="icon"
-            className="w-16 h-16 rounded-full bg-[#FC174D]/80 border-0 text-white hover:bg-[#FC174D] hover:scale-110 transition-all"
-          >
-            <Play className="h-8 w-8 fill-white" />
-            <span className="sr-only">Play Trailer</span>
-          </Button>
-        </div>
       </div>
 
       {/* Movie Details */}
@@ -77,8 +84,12 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
         <div className="grid md:grid-cols-[300px_1fr] gap-8">
           {/* Movie Poster */}
           <div className="hidden md:block">
-            <div className="rounded-lg overflow-hidden shadow-xl">
-              <img src={movie.image || "/placeholder.svg"} alt={movie.title} className="w-full h-auto" />
+            <div className="rounded-lg overflow-hidden  shadow-xl">
+              <img
+                src={movie.image || "/placeholder.svg"}
+                alt={movie.title}
+                className="w-full h-auto object-fill"
+              />
             </div>
 
             <div className="mt-6 space-y-4">
@@ -87,11 +98,19 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
               </Button>
 
               <div className="flex gap-2">
-                <Button variant="outline" size="icon" className="flex-1 text-white border-zinc-700 hover:bg-zinc-800">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="flex-1 text-white border-zinc-700 bg-zinc-800 hover:bg-zinc-800"
+                >
                   <Heart className="h-5 w-5" />
                   <span className="sr-only">Add to Wishlist</span>
                 </Button>
-                <Button variant="outline" size="icon" className="flex-1 text-white border-zinc-700 hover:bg-zinc-800">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="flex-1 text-white border-zinc-700 bg-zinc-800 hover:bg-zinc-800"
+                >
                   <Share2 className="h-5 w-5" />
                   <span className="sr-only">Share</span>
                 </Button>
@@ -116,19 +135,28 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">{movie.title}</h1>
+            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              {movie.title}
+            </h1>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {movie.genres.map((genre) => (
-                <span key={genre} className="text-sm bg-zinc-800 text-gray-300 px-3 py-1 rounded-full">
+                <span
+                  key={genre}
+                  className="text-sm bg-zinc-800 text-gray-300 px-3 py-1 rounded-full"
+                >
                   {genre}
                 </span>
               ))}
             </div>
 
             <div className="mb-6">
-              <h2 className="text-xl font-semibold text-white mb-2">Synopsis</h2>
-              <p className="text-gray-300 leading-relaxed">{movie.description}</p>
+              <h2 className="text-xl font-semibold text-white mb-2">
+                Synopsis
+              </h2>
+              <p className="text-gray-300 leading-relaxed">
+                {movie.description}
+              </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
@@ -155,7 +183,9 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
 
             {/* Cast & Crew */}
             <div className="mb-8">
-              <h2 className="text-xl font-semibold text-white mb-4">Cast & Crew</h2>
+              <h2 className="text-xl font-semibold text-white mb-4">
+                Cast & Crew
+              </h2>
               <CastCrew cast={movie.cast} />
             </div>
 
@@ -179,8 +209,13 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
             {/* User Reviews */}
             <div>
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold text-white">User Reviews</h2>
-                <Button variant="outline" className="text-white border-zinc-700 hover:bg-zinc-800">
+                <h2 className="text-xl font-semibold text-white">
+                  User Reviews
+                </h2>
+                <Button
+                  variant="outline"
+                  className="text-white border-zinc-700 bg-zinc-800 hover:bg-zinc-800"
+                >
                   <MessageCircle className="h-4 w-4 mr-2" />
                   <span>Write a Review</span>
                 </Button>
@@ -208,9 +243,10 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
                     </div>
                   </div>
                   <p className="text-gray-300">
-                    Villeneuve has done it again. This is a masterpiece of sci-fi filmmaking that expands on the first
-                    film in every way. The visuals are breathtaking, the performances are stellar, and the story is epic
-                    in scope.
+                    Villeneuve has done it again. This is a masterpiece of
+                    sci-fi filmmaking that expands on the first film in every
+                    way. The visuals are breathtaking, the performances are
+                    stellar, and the story is epic in scope.
                   </p>
                 </div>
 
@@ -235,9 +271,11 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
                     </div>
                   </div>
                   <p className="text-gray-300">
-                    One of the best sequels I've ever seen. The world-building is incredible, and the way the story
-                    unfolds is both satisfying and thought-provoking. The cast is perfect, especially Zendaya who gets
-                    much more screen time in this one.
+                    One of the best sequels I've ever seen. The world-building
+                    is incredible, and the way the story unfolds is both
+                    satisfying and thought-provoking. The cast is perfect,
+                    especially Zendaya who gets much more screen time in this
+                    one.
                   </p>
                 </div>
               </div>
@@ -252,5 +290,5 @@ export default function MovieDetailsPage({ params }: { params: { id: string } })
         </div>
       </div>
     </main>
-  )
+  );
 }
