@@ -5,13 +5,12 @@ import GenreFilter from "@/components/genre-filter"
 export default function Home() {
   return (
     <main className="flex-1">
-      {/* Featured Movies as Hero Section */}
       <section className="bg-black pt-0">
         <FeaturedMovies />
       </section>
 
       {/* Now Showing */}
-      <section className="py-12 bg-zinc-900">
+      <section className="py-12 bg-black">
         <div className="container px-4 md:px-6">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Now Showing</h2>
           <GenreFilter />

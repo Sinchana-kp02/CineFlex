@@ -20,7 +20,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "dune-part-two",
       title: "Dune: Part Two",
-      image: "/dune-part-two-poster.png",
+      image: "/movies/dune-part-two/portrait.webp",
       rating: 8.7,
       duration: "166 min",
       genres: ["Sci-Fi", "Adventure"],
@@ -28,7 +28,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "godzilla-kong",
       title: "Godzilla x Kong",
-      image: "/godzilla-kong-movie-poster.png",
+      image: "/movies/godzilla-kong/portrait.jpg",
       rating: 7.8,
       duration: "132 min",
       genres: ["Action", "Sci-Fi"],
@@ -36,7 +36,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "kung-fu-panda-4",
       title: "Kung Fu Panda 4",
-      image: "/kung-fu-panda-4-poster.png",
+      image: "/movies/kung-fu-panda-4/portrait.jpg",
       rating: 7.3,
       duration: "94 min",
       genres: ["Animation", "Comedy"],
@@ -44,8 +44,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "ghostbusters-frozen-empire",
       title: "Ghostbusters: Frozen Empire",
-      image:
-        "/placeholder.svg?height=400&width=300&query=ghostbusters frozen empire movie poster",
+      image: "/movies/ghostbusters-frozen-empire/portrait.jpg",
       rating: 7.1,
       duration: "115 min",
       genres: ["Comedy", "Fantasy"],
@@ -53,8 +52,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "imaginary",
       title: "Imaginary",
-      image:
-        "/placeholder.svg?height=400&width=300&query=imaginary horror movie poster",
+      image: "/movies/imaginary/portrait.jpg",
       rating: 6.5,
       duration: "104 min",
       genres: ["Horror", "Thriller"],
@@ -62,8 +60,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "the-fall-guy",
       title: "The Fall Guy",
-      image:
-        "/placeholder.svg?height=400&width=300&query=the fall guy movie poster",
+      image: "/movies/the-fall-guy/portrait.jpg",
       rating: 7.9,
       duration: "126 min",
       genres: ["Action", "Comedy"],
