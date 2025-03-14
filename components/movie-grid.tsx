@@ -70,8 +70,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "deadpool-wolverine",
       title: "Deadpool & Wolverine",
-      image:
-        "/placeholder.svg?height=400&width=300&query=deadpool wolverine movie poster",
+      image: "/movies/deadpool-wolverine/portrait.jpg",
       rating: 9.0,
       duration: "TBA",
       genres: ["Action", "Comedy"],
@@ -80,8 +79,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "furiosa",
       title: "Furiosa: A Mad Max Saga",
-      image:
-        "/placeholder.svg?height=400&width=300&query=furiosa mad max movie poster",
+      image: "/movies/furiosa/portrait.jpg",
       rating: 8.5,
       duration: "148 min",
       genres: ["Action", "Adventure"],
@@ -90,8 +88,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "inside-out-2",
       title: "Inside Out 2",
-      image:
-        "/placeholder.svg?height=400&width=300&query=inside out 2 movie poster",
+      image: "/movies/inside-out-2/portrait.jpg",
       rating: 8.2,
       duration: "TBA",
       genres: ["Animation", "Comedy"],
@@ -100,8 +97,7 @@ const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
     {
       id: "a-quiet-place-day-one",
       title: "A Quiet Place: Day One",
-      image:
-        "/placeholder.svg?height=400&width=300&query=a quiet place day one movie poster",
+      image: "/movies/quite-place/portrait.jpg",
       rating: 7.8,
       duration: "TBA",
       genres: ["Horror", "Sci-Fi"],
