@@ -242,37 +242,37 @@ export const moviesData: Record<string, Movie> = {
         name: "Rebecca Hall",
         role: "Dr. Ilene Andrews",
         image:
-          "/placeholder.svg?height=200&width=200&query=Rebecca Hall actress headshot",
+          "/cast/Rebecca-Hall.png",
+      },
+      {
+        name: "Millie Bobby Brown",
+        role: "Madison Russell",
+        image:
+          "/cast/Millie-Bobby-Brown.png",
       },
       {
         name: "Brian Tyree Henry",
         role: "Bernie Hayes",
         image:
-          "/placeholder.svg?height=200&width=200&query=Brian Tyree Henry actor headshot",
+          "/cast/Brian-Tyree-Henry.png",
       },
       {
         name: "Dan Stevens",
         role: "Trapper",
         image:
-          "/placeholder.svg?height=200&width=200&query=Dan Stevens actor headshot",
+          "/cast/Dan-Stevens.png",
       },
       {
         name: "Kaylee Hottle",
         role: "Jia",
         image:
-          "/placeholder.svg?height=200&width=200&query=Kaylee Hottle actress headshot",
+          "/cast/Kaylee-Hottle.png",
       },
       {
         name: "Alex Ferns",
         role: "Mikael",
         image:
-          "/placeholder.svg?height=200&width=200&query=Alex Ferns actor headshot",
-      },
-      {
-        name: "Fala Chen",
-        role: "Queen Iwi",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Fala Chen actress headshot",
+          "/cast/Alex-Ferns.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/odM92ap8_c0",
