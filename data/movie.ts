@@ -26,17 +26,17 @@ export const featuredMovies = [
   {
     id: "dune-part-two",
     title: "Dune: Part Two",
-    image: "/movies/dune-part-two/landscape.png",
+    image: "/movies/dune-part-two/landscape.jpg",
     rating: 8.7,
     releaseDate: "March 1, 2024",
-    alignment: "top center",
+    alignment: "center",
     description:
       "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
   },
   {
     id: "the-batman",
     title: "The Batman",
-    image: "/movies/the-batman/landscape.png",
+    image: "/movies/the-batman/landscape.jpg",
     rating: 8.3,
     releaseDate: "March 4, 2022",
     alignment: "top center",
@@ -46,7 +46,7 @@ export const featuredMovies = [
   {
     id: "oppenheimer",
     title: "Oppenheimer",
-    image: "/movies/oppenheimer/landscape.png",
+    image: "/movies/oppenheimer/landscape.jpg",
     rating: 8.5,
     releaseDate: "July 21, 2023",
     alignment: "center",
@@ -56,7 +56,7 @@ export const featuredMovies = [
   {
     id: "godzilla-kong",
     title: "Godzilla x Kong: The New Empire",
-    image: "/movies/godzilla-kong/landscape.png",
+    image: "/movies/godzilla-kong/landscape.jpg",
     rating: 7.8,
     releaseDate: "March 29, 2024",
     alignment: "top center",

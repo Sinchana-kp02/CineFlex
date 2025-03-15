@@ -62,7 +62,7 @@ export default function FeaturedMovies() {
                   </Button>
                   <Button
                     variant="outline"
-                    className="text-white border-white hover:bg-white/10"
+                    className="text-white border-white hover:bg-white/10 bg-zinc-800"
                   >
                     Watch Trailer
                   </Button>
