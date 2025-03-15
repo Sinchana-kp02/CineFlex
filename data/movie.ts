@@ -70,8 +70,8 @@ export const moviesData: Record<string, Movie> = {
   "dune-part-two": {
     id: "dune-part-two",
     title: "Dune: Part Two",
-    image: "/movies/dune-part-two/poster.png",
-    backdrop: "/movies/dune-part-two/backdrop.png",
+    image: "/movies/dune-part-two/poster.jpg",
+    backdrop: "/movies/dune-part-two/landscape.jpg",
     rating: 8.7,
     duration: "166 min",
     releaseDate: "March 1, 2024",
@@ -84,34 +84,32 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Timothée Chalamet",
         role: "Paul Atreides",
-        image: "/timothee-chalamet-headshot.png",
+        image: "/cast/timothee.png",
       },
       {
         name: "Zendaya",
         role: "Chani",
-        image: "/zendaya-headshot.png",
+        image: "/cast/zendaya.png",
       },
       {
         name: "Rebecca Ferguson",
         role: "Lady Jessica",
-        image: "/rebecca-ferguson-headshot.png",
+        image: "/cast/Rebecca-Ferguson.png",
       },
       {
         name: "Josh Brolin",
         role: "Gurney Halleck",
-        image: "/josh-brolin-headshot.png",
+        image: "/cast/Josh-Brolin.png",
       },
       {
         name: "Javier Bardem",
         role: "Stilgar",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Javier Bardem actor headshot",
+        image: "/cast/Javier-Bardem.png",
       },
       {
-        name: "Austin Butler",
-        role: "Feyd-Rautha",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Austin Butler actor headshot",
+        name: "Jason Momoa",
+        role: "Duncan Idaho",
+        image: "/cast/Jason-Momoa.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/Way9Dexny3w",
