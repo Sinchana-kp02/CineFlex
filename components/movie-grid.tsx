@@ -3,6 +3,11 @@ import Link from "next/link";
 import { Star, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { nowShowingMovies, comingSoonMovies } from "@/data/movie";
+
+interface MovieGridProps {
+  category: "now-showing" | "coming-soon";
+}
 
 interface Movie {
   id: string;
@@ -14,104 +19,9 @@ interface Movie {
   releaseDate?: string;
 }
 
-// Mock data for movies
-const moviesData: Record<"now-showing" | "coming-soon", Movie[]> = {
-  "now-showing": [
-    {
-      id: "dune-part-two",
-      title: "Dune: Part Two",
-      image: "/movies/dune-part-two/portrait.webp",
-      rating: 8.7,
-      duration: "166 min",
-      genres: ["Sci-Fi", "Adventure"],
-    },
-    {
-      id: "godzilla-kong",
-      title: "Godzilla x Kong",
-      image: "/movies/godzilla-kong/portrait.jpg",
-      rating: 7.8,
-      duration: "132 min",
-      genres: ["Action", "Sci-Fi"],
-    },
-    {
-      id: "kung-fu-panda-4",
-      title: "Kung Fu Panda 4",
-      image: "/movies/kung-fu-panda-4/portrait.jpg",
-      rating: 7.3,
-      duration: "94 min",
-      genres: ["Animation", "Comedy"],
-    },
-    {
-      id: "ghostbusters-frozen-empire",
-      title: "Ghostbusters: Frozen Empire",
-      image: "/movies/ghostbusters-frozen-empire/portrait.jpg",
-      rating: 7.1,
-      duration: "115 min",
-      genres: ["Comedy", "Fantasy"],
-    },
-    {
-      id: "imaginary",
-      title: "Imaginary",
-      image: "/movies/imaginary/portrait.jpg",
-      rating: 6.5,
-      duration: "104 min",
-      genres: ["Horror", "Thriller"],
-    },
-    {
-      id: "the-fall-guy",
-      title: "The Fall Guy",
-      image: "/movies/the-fall-guy/portrait.jpg",
-      rating: 7.9,
-      duration: "126 min",
-      genres: ["Action", "Comedy"],
-    },
-  ],
-  "coming-soon": [
-    {
-      id: "deadpool-wolverine",
-      title: "Deadpool & Wolverine",
-      image: "/movies/deadpool-wolverine/portrait.jpg",
-      rating: 9.0,
-      duration: "TBA",
-      genres: ["Action", "Comedy"],
-      releaseDate: "July 26, 2024",
-    },
-    {
-      id: "furiosa",
-      title: "Furiosa: A Mad Max Saga",
-      image: "/movies/furiosa/portrait.jpg",
-      rating: 8.5,
-      duration: "148 min",
-      genres: ["Action", "Adventure"],
-      releaseDate: "May 24, 2024",
-    },
-    {
-      id: "inside-out-2",
-      title: "Inside Out 2",
-      image: "/movies/inside-out-2/portrait.jpg",
-      rating: 8.2,
-      duration: "TBA",
-      genres: ["Animation", "Comedy"],
-      releaseDate: "June 14, 2024",
-    },
-    {
-      id: "a-quiet-place-day-one",
-      title: "A Quiet Place: Day One",
-      image: "/movies/quite-place/portrait.jpg",
-      rating: 7.8,
-      duration: "TBA",
-      genres: ["Horror", "Sci-Fi"],
-      releaseDate: "June 28, 2024",
-    },
-  ],
-};
-
-interface MovieGridProps {
-  category: "now-showing" | "coming-soon";
-}
-
 export default function MovieGrid({ category }: MovieGridProps) {
-  const movies = moviesData[category];
+  const movies: Movie[] =
+    category === "now-showing" ? nowShowingMovies : comingSoonMovies;
 
   return (
     <>

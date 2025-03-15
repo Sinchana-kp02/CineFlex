@@ -9,64 +9,14 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import CastCrew from "@/components/cast-crew";
-
-// Mock data for movie details
-const getMovieDetails = (id: string) => {
-  return {
-    id,
-    title: id === "dune-part-two" ? "Dune: Part Two" : "Movie Title",
-    image: `/movies/dune-part-two/poster.jpg`,
-    backdrop: `/movies/dune-part-two/landscape.jpg`,
-    rating: 8.7,
-    duration: "166 min",
-    releaseDate: "March 1, 2024",
-    genres: ["Sci-Fi", "Adventure", "Drama"],
-    languages: ["English", "Spanish", "French"],
-    description:
-      "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family. As he begins a spiritual and martial journey to become a religious leader, he faces the ultimate choice between the love of his life and the fate of the universe.",
-    director: "Denis Villeneuve",
-    cast: [
-      {
-        name: "Timothée Chalamet",
-        role: "Paul Atreides",
-        image: "/cast/timothee.png",
-      },
-      {
-        name: "Zendaya",
-        role: "Chani",
-        image: "/cast/zendaya.png",
-      },
-      {
-        name: "Rebecca Ferguson",
-        role: "Lady Jessica",
-        image: "/cast/Rebecca-Ferguson.png",
-      },
-      {
-        name: "Josh Brolin",
-        role: "Gurney Halleck",
-        image: "/cast/Josh-Brolin.png",
-      },
-      {
-        name: "Javier Bardem",
-        role: "Stilgar",
-        image: "/cast/Javier-Bardem.png",
-      },
-      {
-        name: "Jason Momoa",
-        role: "Duncan Idaho",
-        image: "/cast/Jason-Momoa.png",
-      },
-    ],
-    trailerUrl: "https://www.youtube.com/embed/Way9Dexny3w",
-  };
-};
+import { getMovieById } from "@/data/movie";
 
 export default function MovieDetailsPage({
   params,
 }: {
   params: { id: string };
 }) {
-  const movie = getMovieDetails(params.id);
+  const movie = getMovieById(params.id);
 
   return (
     <main className="flex-1">
@@ -84,11 +34,11 @@ export default function MovieDetailsPage({
         <div className="grid md:grid-cols-[300px_1fr] gap-8">
           {/* Movie Poster */}
           <div className="hidden md:block">
-            <div className="rounded-lg overflow-hidden  shadow-xl">
+            <div className="rounded-lg overflow-hidden shadow-xl aspect-square">
               <img
                 src={movie.image || "/placeholder.svg"}
                 alt={movie.title}
-                className="w-full h-auto object-fill"
+                className="w-full h-full object-cover"
               />
             </div>
 

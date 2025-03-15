@@ -4,54 +4,12 @@ import { Star, Calendar } from "lucide-react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { featuredMovies } from "@/data/movie";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-const featuredMovies = [
-  {
-    id: "dune-part-two",
-    title: "Dune: Part Two",
-    image: "/movies/dune-part-two/landscape.jpg",
-    rating: 8.7,
-    releaseDate: "March 1, 2024",
-    alignment: "center",
-    description:
-      "Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.",
-  },
-  {
-    id: "the-batman",
-    title: "The Batman",
-    image: "/movies/the-batman/landscape.jpg",
-    rating: 8.3,
-    releaseDate: "March 4, 2022",
-    alignment: "top center",
-    description:
-      "When a sadistic serial killer begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption.",
-  },
-  {
-    id: "oppenheimer",
-    title: "Oppenheimer",
-    image: "/movies/oppenheimer/landscape.jpg",
-    rating: 8.5,
-    releaseDate: "July 21, 2023",
-    alignment: "center",
-    description:
-      "The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.",
-  },
-  {
-    id: "godzilla-kong",
-    title: "Godzilla x Kong: The New Empire",
-    image: "/movies/godzilla-kong/landscape.jpg",
-    rating: 7.8,
-    releaseDate: "March 29, 2024",
-    alignment: "top center",
-    description:
-      "Two ancient titans, Godzilla and Kong, clash in an epic battle as humans unravel their intertwined origins.",
-  },
-];
 
 export default function FeaturedMovies() {
   return (

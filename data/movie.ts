@@ -99,8 +99,7 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Josh Brolin",
         role: "Gurney Halleck",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Josh Brolin actor headshot",
+        image: "/josh-brolin-headshot.png",
       },
       {
         name: "Javier Bardem",
@@ -275,6 +274,445 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/odM92ap8_c0",
+  },
+  "kung-fu-panda-4": {
+    id: "kung-fu-panda-4",
+    title: "Kung Fu Panda 4",
+    image: "/kung-fu-panda-4-poster.png",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=kung fu panda 4 movie scene",
+    rating: 7.3,
+    duration: "94 min",
+    releaseDate: "March 8, 2024",
+    genres: ["Animation", "Comedy", "Action", "Adventure"],
+    languages: ["English"],
+    description:
+      "Po is called upon to become the Spiritual Leader of the Valley of Peace. However, he needs to find and train a new Dragon Warrior before he can assume his new position, while a shape-shifting sorceress has her sights set on his Staff of Wisdom.",
+    director: "Mike Mitchell",
+    cast: [
+      {
+        name: "Jack Black",
+        role: "Po (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Jack Black actor headshot",
+      },
+      {
+        name: "Awkwafina",
+        role: "Zhen (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Awkwafina actress headshot",
+      },
+      {
+        name: "Viola Davis",
+        role: "Chameleon (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Viola Davis actress headshot",
+      },
+      {
+        name: "Bryan Cranston",
+        role: "Po's Birth Father (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Bryan Cranston actor headshot",
+      },
+      {
+        name: "Dustin Hoffman",
+        role: "Master Shifu (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Dustin Hoffman actor headshot",
+      },
+      {
+        name: "James Hong",
+        role: "Mr. Ping (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=James Hong actor headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/HiYHZMIzKVA",
+  },
+  "ghostbusters-frozen-empire": {
+    id: "ghostbusters-frozen-empire",
+    title: "Ghostbusters: Frozen Empire",
+    image:
+      "/placeholder.svg?height=400&width=300&query=ghostbusters frozen empire movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=ghostbusters frozen empire movie scene",
+    rating: 7.1,
+    duration: "115 min",
+    releaseDate: "March 22, 2024",
+    genres: ["Comedy", "Fantasy", "Adventure", "Action"],
+    languages: ["English"],
+    description:
+      "When the discovery of an ancient artifact unleashes an evil force, Ghostbusters new and old must join forces to protect their home and save the world from a second ice age.",
+    director: "Gil Kenan",
+    cast: [
+      {
+        name: "Paul Rudd",
+        role: "Gary Grooberson",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Paul Rudd actor headshot",
+      },
+      {
+        name: "Carrie Coon",
+        role: "Callie Spengler",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Carrie Coon actress headshot",
+      },
+      {
+        name: "Finn Wolfhard",
+        role: "Trevor Spengler",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Finn Wolfhard actor headshot",
+      },
+      {
+        name: "Mckenna Grace",
+        role: "Phoebe Spengler",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Mckenna Grace actress headshot",
+      },
+      {
+        name: "Bill Murray",
+        role: "Dr. Peter Venkman",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Bill Murray actor headshot",
+      },
+      {
+        name: "Dan Aykroyd",
+        role: "Dr. Raymond Stantz",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Dan Aykroyd actor headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/gN3K-wYI-JQ",
+  },
+  imaginary: {
+    id: "imaginary",
+    title: "Imaginary",
+    image:
+      "/placeholder.svg?height=400&width=300&query=imaginary horror movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=imaginary horror movie scene",
+    rating: 6.5,
+    duration: "104 min",
+    releaseDate: "March 8, 2024",
+    genres: ["Horror", "Thriller", "Mystery"],
+    languages: ["English"],
+    description:
+      "A woman returns to her childhood home to discover that the imaginary friend she left behind is very real and unhappy that she abandoned him.",
+    director: "Jeff Wadlow",
+    cast: [
+      {
+        name: "DeWanda Wise",
+        role: "Jessica",
+        image:
+          "/placeholder.svg?height=200&width=200&query=DeWanda Wise actress headshot",
+      },
+      {
+        name: "Tom Payne",
+        role: "Max",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Tom Payne actor headshot",
+      },
+      {
+        name: "Taegen Burns",
+        role: "Taylor",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Taegen Burns actress headshot",
+      },
+      {
+        name: "Pyper Braun",
+        role: "Alice",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Pyper Braun actress headshot",
+      },
+      {
+        name: "Betty Buckley",
+        role: "Gloria",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Betty Buckley actress headshot",
+      },
+      {
+        name: "Veronica Falcón",
+        role: "Dr. Soto",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Veronica Falcon actress headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/R4cdGgMTaQU",
+  },
+  "the-fall-guy": {
+    id: "the-fall-guy",
+    title: "The Fall Guy",
+    image:
+      "/placeholder.svg?height=400&width=300&query=the fall guy movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=the fall guy movie scene",
+    rating: 7.9,
+    duration: "126 min",
+    releaseDate: "May 3, 2024",
+    genres: ["Action", "Comedy", "Adventure"],
+    languages: ["English"],
+    description:
+      "A stuntman is drawn back into service when a movie star goes missing, forcing him to use his unique skills to find the culprits and solve the mystery while falling in love with the film's director.",
+    director: "David Leitch",
+    cast: [
+      {
+        name: "Ryan Gosling",
+        role: "Colt Seavers",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Ryan Gosling actor headshot",
+      },
+      {
+        name: "Emily Blunt",
+        role: "Jody Moreno",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Emily Blunt actress headshot",
+      },
+      {
+        name: "Aaron Taylor-Johnson",
+        role: "Tom Ryder",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Aaron Taylor-Johnson actor headshot",
+      },
+      {
+        name: "Hannah Waddingham",
+        role: "Gail Meyer",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Hannah Waddingham actress headshot",
+      },
+      {
+        name: "Winston Duke",
+        role: "Dan Tucker",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Winston Duke actor headshot",
+      },
+      {
+        name: "Stephanie Hsu",
+        role: "Alma",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Stephanie Hsu actress headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/qLzS0QZhCS4",
+  },
+  "deadpool-wolverine": {
+    id: "deadpool-wolverine",
+    title: "Deadpool & Wolverine",
+    image:
+      "/placeholder.svg?height=400&width=300&query=deadpool wolverine movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=deadpool wolverine movie scene",
+    rating: 9.0,
+    duration: "127 min",
+    releaseDate: "July 26, 2024",
+    genres: ["Action", "Comedy", "Adventure", "Sci-Fi"],
+    languages: ["English"],
+    description:
+      "Deadpool finds himself recruited by the Time Variance Authority to team up with Wolverine for a mission that could change the fate of the multiverse, leading to an unlikely partnership filled with action and irreverent humor.",
+    director: "Shawn Levy",
+    cast: [
+      {
+        name: "Ryan Reynolds",
+        role: "Wade Wilson / Deadpool",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Ryan Reynolds actor headshot",
+      },
+      {
+        name: "Hugh Jackman",
+        role: "Logan / Wolverine",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Hugh Jackman actor headshot",
+      },
+      {
+        name: "Emma Corrin",
+        role: "Cassandra Nova",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Emma Corrin actress headshot",
+      },
+      {
+        name: "Morena Baccarin",
+        role: "Vanessa",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Morena Baccarin actress headshot",
+      },
+      {
+        name: "Matthew Macfadyen",
+        role: "Mr. Paradox",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Matthew Macfadyen actor headshot",
+      },
+      {
+        name: "Rob Delaney",
+        role: "Peter",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Rob Delaney actor headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/Yd47Z8HYf0Y",
+  },
+  furiosa: {
+    id: "furiosa",
+    title: "Furiosa: A Mad Max Saga",
+    image:
+      "/placeholder.svg?height=400&width=300&query=furiosa mad max movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=furiosa mad max movie scene",
+    rating: 8.5,
+    duration: "148 min",
+    releaseDate: "May 24, 2024",
+    genres: ["Action", "Adventure", "Sci-Fi", "Thriller"],
+    languages: ["English"],
+    description:
+      "The origin story of renegade warrior Furiosa before her encounter with Max Rockatansky. Young Furiosa is kidnapped from the Green Place of Many Mothers and falls into the hands of a great Biker Horde led by the Warlord Dementus.",
+    director: "George Miller",
+    cast: [
+      {
+        name: "Anya Taylor-Joy",
+        role: "Furiosa",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Anya Taylor-Joy actress headshot",
+      },
+      {
+        name: "Chris Hemsworth",
+        role: "Dementus",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Chris Hemsworth actor headshot",
+      },
+      {
+        name: "Tom Burke",
+        role: "Jack",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Tom Burke actor headshot",
+      },
+      {
+        name: "Alyla Browne",
+        role: "Young Furiosa",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Alyla Browne actress headshot",
+      },
+      {
+        name: "Lachy Hulme",
+        role: "Immortan Joe / General Praetorian Jack",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Lachy Hulme actor headshot",
+      },
+      {
+        name: "Nathan Jones",
+        role: "Rictus Erectus",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Nathan Jones actor headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/XdKzUbAiswE",
+  },
+  "inside-out-2": {
+    id: "inside-out-2",
+    title: "Inside Out 2",
+    image:
+      "/placeholder.svg?height=400&width=300&query=inside out 2 movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=inside out 2 movie scene",
+    rating: 8.2,
+    duration: "96 min",
+    releaseDate: "June 14, 2024",
+    genres: ["Animation", "Comedy", "Adventure", "Family"],
+    languages: ["English"],
+    description:
+      "As Riley enters her teenage years, her emotions face a major upheaval when new emotions arrive, including Anxiety, Envy, Ennui, and Embarrassment. Joy and the team must learn to work with these new emotions as Riley navigates the challenges of adolescence.",
+    director: "Kelsey Mann",
+    cast: [
+      {
+        name: "Amy Poehler",
+        role: "Joy (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Amy Poehler actress headshot",
+      },
+      {
+        name: "Maya Hawke",
+        role: "Anxiety (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Maya Hawke actress headshot",
+      },
+      {
+        name: "Kensington Tallman",
+        role: "Riley (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Kensington Tallman actress headshot",
+      },
+      {
+        name: "Liza Lapira",
+        role: "Disgust (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Liza Lapira actress headshot",
+      },
+      {
+        name: "Tony Hale",
+        role: "Fear (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Tony Hale actor headshot",
+      },
+      {
+        name: "Lewis Black",
+        role: "Anger (voice)",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Lewis Black actor headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/VnR9Ql5vscw",
+  },
+  "a-quiet-place-day-one": {
+    id: "a-quiet-place-day-one",
+    title: "A Quiet Place: Day One",
+    image:
+      "/placeholder.svg?height=400&width=300&query=a quiet place day one movie poster",
+    backdrop:
+      "/placeholder.svg?height=1080&width=1920&query=a quiet place day one movie scene",
+    rating: 7.8,
+    duration: "104 min",
+    releaseDate: "June 28, 2024",
+    genres: ["Horror", "Sci-Fi", "Thriller"],
+    languages: ["English"],
+    description:
+      "Experience the day the world went quiet. This prequel to the original films explores the beginning of the alien invasion that forced humanity to live in silence, focusing on the first day of the arrival in New York City.",
+    director: "Michael Sarnoski",
+    cast: [
+      {
+        name: "Lupita Nyong'o",
+        role: "Sam",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Lupita Nyong'o actress headshot",
+      },
+      {
+        name: "Joseph Quinn",
+        role: "Eric",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Joseph Quinn actor headshot",
+      },
+      {
+        name: "Alex Wolff",
+        role: "Ethan",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Alex Wolff actor headshot",
+      },
+      {
+        name: "Djimon Hounsou",
+        role: "Paris",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Djimon Hounsou actor headshot",
+      },
+      {
+        name: "Amélie Hoeferle",
+        role: "Olivia",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Amélie Hoeferle actress headshot",
+      },
+      {
+        name: "Phoebe Waller-Bridge",
+        role: "Cameo",
+        image:
+          "/placeholder.svg?height=200&width=200&query=Phoebe Waller-Bridge actress headshot",
+      },
+    ],
+    trailerUrl: "https://www.youtube.com/embed/EIAa7kgGYC4",
   },
 };
 
