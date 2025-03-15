@@ -19,6 +19,7 @@ export interface Movie {
   director: string;
   cast: MovieCast[];
   trailerUrl: string;
+  alignment: string;
 }
 
 // Featured movies data for the home page slider
@@ -113,6 +114,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/Way9Dexny3w",
+    alignment: "center",
   },
   "the-batman": {
     id: "the-batman",
@@ -166,6 +168,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/mqqft2x_Aa4",
+    alignment: "top center",
   },
   oppenheimer: {
     id: "oppenheimer",
@@ -219,12 +222,13 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/uYPbbksJxIg",
+    alignment: "center",
   },
   "godzilla-kong": {
     id: "godzilla-kong",
     title: "Godzilla x Kong: The New Empire",
-    image: "/movies/godzilla-kong/poster.png",
-    backdrop: "/movies/godzilla-kong/backdrop.png",
+    image: "/movies/godzilla-kong/poster.jpg",
+    backdrop: "/movies/godzilla-kong/landscape.jpg",
     rating: 7.8,
     duration: "115 min",
     releaseDate: "March 29, 2024",
@@ -272,6 +276,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/odM92ap8_c0",
+    alignment: "top center",
   },
   "kung-fu-panda-4": {
     id: "kung-fu-panda-4",
@@ -326,6 +331,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/HiYHZMIzKVA",
+    alignment: "center",
   },
   "ghostbusters-frozen-empire": {
     id: "ghostbusters-frozen-empire",
@@ -381,6 +387,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/gN3K-wYI-JQ",
+    alignment: "center",
   },
   imaginary: {
     id: "imaginary",
@@ -436,6 +443,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/R4cdGgMTaQU",
+    alignment: "center",
   },
   "the-fall-guy": {
     id: "the-fall-guy",
@@ -491,6 +499,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/qLzS0QZhCS4",
+    alignment: "center",
   },
   "deadpool-wolverine": {
     id: "deadpool-wolverine",
@@ -546,6 +555,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/Yd47Z8HYf0Y",
+    alignment: "center",
   },
   furiosa: {
     id: "furiosa",
@@ -601,6 +611,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/XdKzUbAiswE",
+    alignment: "center",
   },
   "inside-out-2": {
     id: "inside-out-2",
@@ -656,6 +667,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/VnR9Ql5vscw",
+    alignment: "center",
   },
   "a-quiet-place-day-one": {
     id: "a-quiet-place-day-one",
@@ -711,6 +723,7 @@ export const moviesData: Record<string, Movie> = {
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/EIAa7kgGYC4",
+    alignment: "center",
   },
 };
 
@@ -733,6 +746,7 @@ export function getMovieById(id: string): Movie {
       director: "N/A",
       cast: [],
       trailerUrl: "",
+      alignment: "center",
     }
   );
 }

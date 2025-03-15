@@ -24,7 +24,10 @@ export default function MovieDetailsPage({
       <div className="relative h-[50vh] md:h-[70vh] w-full">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${movie.backdrop})` }}
+          style={{
+            backgroundImage: `url(${movie.backdrop})`,
+            backgroundPosition: movie.alignment,
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
       </div>
