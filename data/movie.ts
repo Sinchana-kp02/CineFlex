@@ -170,7 +170,7 @@ export const moviesData: Record<string, Movie> = {
     trailerUrl: "https://www.youtube.com/embed/mqqft2x_Aa4",
     alignment: "top center",
   },
-  oppenheimer: {
+  "oppenheimer": {
     id: "oppenheimer",
     title: "Oppenheimer",
     image: "/movies/oppenheimer/poster.png",
@@ -323,10 +323,8 @@ export const moviesData: Record<string, Movie> = {
   "ghostbusters-frozen-empire": {
     id: "ghostbusters-frozen-empire",
     title: "Ghostbusters: Frozen Empire",
-    image:
-      "/placeholder.svg?height=400&width=300&query=ghostbusters frozen empire movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=ghostbusters frozen empire movie scene",
+    image: "/movies/ghostbusters-frozen-empire/portrait.jpg",
+    backdrop: "/movies/ghostbusters-frozen-empire/landscape.jpg",
     rating: 7.1,
     duration: "115 min",
     releaseDate: "March 22, 2024",
@@ -340,44 +338,43 @@ export const moviesData: Record<string, Movie> = {
         name: "Paul Rudd",
         role: "Gary Grooberson",
         image:
-          "/placeholder.svg?height=200&width=200&query=Paul Rudd actor headshot",
+          "/cast/Paul-Rudd.png",
       },
       {
         name: "Carrie Coon",
         role: "Callie Spengler",
         image:
-          "/placeholder.svg?height=200&width=200&query=Carrie Coon actress headshot",
+          "/cast/Carrie-Coon.png",
       },
       {
         name: "Finn Wolfhard",
         role: "Trevor Spengler",
         image:
-          "/placeholder.svg?height=200&width=200&query=Finn Wolfhard actor headshot",
+          "/cast/Finn-Wolfhard.png",
       },
       {
         name: "Mckenna Grace",
         role: "Phoebe Spengler",
         image:
-          "/placeholder.svg?height=200&width=200&query=Mckenna Grace actress headshot",
+          "/cast/Mckenna-Grace.png",
       },
       {
         name: "Bill Murray",
         role: "Dr. Peter Venkman",
         image:
-          "/placeholder.svg?height=200&width=200&query=Bill Murray actor headshot",
+          "/cast/Bill-Murray.png",
       },
       {
         name: "Dan Aykroyd",
         role: "Dr. Raymond Stantz",
         image:
-          "/placeholder.svg?height=200&width=200&query=Dan Aykroyd actor headshot",
+          "/cast/Dan-Aykroyd.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/HpOBXh02rVc"
-,
-    alignment: "center",
+    trailerUrl: "https://www.youtube.com/embed/HpOBXh02rVc",
+    alignment: "top center",
   },
-  imaginary: {
+  "imaginary": {
     id: "imaginary",
     title: "Imaginary",
     image:
@@ -545,7 +542,7 @@ export const moviesData: Record<string, Movie> = {
     trailerUrl: "https://www.youtube.com/embed/Yd47Z8HYf0Y",
     alignment: "center",
   },
-  furiosa: {
+  "furiosa": {
     id: "furiosa",
     title: "Furiosa: A Mad Max Saga",
     image:
