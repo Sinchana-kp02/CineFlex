@@ -170,7 +170,7 @@ export const moviesData: Record<string, Movie> = {
     trailerUrl: "https://www.youtube.com/embed/mqqft2x_Aa4",
     alignment: "top center",
   },
-  "oppenheimer": {
+  oppenheimer: {
     id: "oppenheimer",
     title: "Oppenheimer",
     image: "/movies/oppenheimer/poster.png",
@@ -337,50 +337,42 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Paul Rudd",
         role: "Gary Grooberson",
-        image:
-          "/cast/Paul-Rudd.png",
+        image: "/cast/Paul-Rudd.png",
       },
       {
         name: "Carrie Coon",
         role: "Callie Spengler",
-        image:
-          "/cast/Carrie-Coon.png",
+        image: "/cast/Carrie-Coon.png",
       },
       {
         name: "Finn Wolfhard",
         role: "Trevor Spengler",
-        image:
-          "/cast/Finn-Wolfhard.png",
+        image: "/cast/Finn-Wolfhard.png",
       },
       {
         name: "Mckenna Grace",
         role: "Phoebe Spengler",
-        image:
-          "/cast/Mckenna-Grace.png",
+        image: "/cast/Mckenna-Grace.png",
       },
       {
         name: "Bill Murray",
         role: "Dr. Peter Venkman",
-        image:
-          "/cast/Bill-Murray.png",
+        image: "/cast/Bill-Murray.png",
       },
       {
         name: "Dan Aykroyd",
         role: "Dr. Raymond Stantz",
-        image:
-          "/cast/Dan-Aykroyd.png",
+        image: "/cast/Dan-Aykroyd.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/HpOBXh02rVc",
     alignment: "top center",
   },
-  "imaginary": {
+  imaginary: {
     id: "imaginary",
     title: "Imaginary",
-    image:
-      "/placeholder.svg?height=400&width=300&query=imaginary horror movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=imaginary horror movie scene",
+    image: "/movies/imaginary/poster.jpg",
+    backdrop: "/movies/imaginary/backdrop.jpg",
     rating: 6.5,
     duration: "104 min",
     releaseDate: "March 8, 2024",
@@ -393,41 +385,35 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "DeWanda Wise",
         role: "Jessica",
-        image:
-          "/placeholder.svg?height=200&width=200&query=DeWanda Wise actress headshot",
+        image: "/cast/DeWanda-Wise.png",
       },
       {
         name: "Tom Payne",
         role: "Max",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Tom Payne actor headshot",
+        image: "/cast/Tom-Payne.png",
       },
       {
         name: "Taegen Burns",
         role: "Taylor",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Taegen Burns actress headshot",
+        image: "/cast/Taegen-Burns.png",
       },
       {
         name: "Pyper Braun",
         role: "Alice",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Pyper Braun actress headshot",
+        image: "/cast/Pyper-Braun.png",
       },
       {
         name: "Betty Buckley",
         role: "Gloria",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Betty Buckley actress headshot",
+        image: "/cast/Betty-Buckley.png",
       },
       {
         name: "Veronica Falcón",
         role: "Dr. Soto",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Veronica Falcon actress headshot",
+        image: "/cast/Veronica-Falcón.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/R4cdGgMTaQU",
+    trailerUrl: "https://www.youtube.com/embed/08LkWklRzMc",
     alignment: "center",
   },
   "the-fall-guy": {
@@ -542,7 +528,7 @@ export const moviesData: Record<string, Movie> = {
     trailerUrl: "https://www.youtube.com/embed/Yd47Z8HYf0Y",
     alignment: "center",
   },
-  "furiosa": {
+  furiosa: {
     id: "furiosa",
     title: "Furiosa: A Mad Max Saga",
     image:
