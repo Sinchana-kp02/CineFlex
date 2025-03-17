@@ -419,10 +419,8 @@ export const moviesData: Record<string, Movie> = {
   "the-fall-guy": {
     id: "the-fall-guy",
     title: "The Fall Guy",
-    image:
-      "/placeholder.svg?height=400&width=300&query=the fall guy movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=the fall guy movie scene",
+    image: "/movies/the-fall-guy/portrait.jpg",
+    backdrop: "/movies/the-fall-guy/backdrop.jpg",
     rating: 7.9,
     duration: "126 min",
     releaseDate: "May 3, 2024",
@@ -435,41 +433,35 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Ryan Gosling",
         role: "Colt Seavers",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Ryan Gosling actor headshot",
+        image: "/cast/Ryan-Gosling.png",
       },
       {
         name: "Emily Blunt",
         role: "Jody Moreno",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Emily Blunt actress headshot",
+        image: "/cast/Emily-Blunt.png",
       },
       {
         name: "Aaron Taylor-Johnson",
         role: "Tom Ryder",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Aaron Taylor-Johnson actor headshot",
+        image: "/cast/Aaron-Taylor-Johnson.png",
       },
       {
         name: "Hannah Waddingham",
         role: "Gail Meyer",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Hannah Waddingham actress headshot",
+        image: "/cast/Hannah-Waddingham.png",
       },
       {
         name: "Winston Duke",
         role: "Dan Tucker",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Winston Duke actor headshot",
+        image: "/cast/Winston-Duke.png",
       },
       {
         name: "Stephanie Hsu",
         role: "Alma",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Stephanie Hsu actress headshot",
+        image: "/cast/Stephanie-Hsu.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/qLzS0QZhCS4",
+    trailerUrl: "https://www.youtube.com/embed/j7jPnwVGdZ8",
     alignment: "center",
   },
   "deadpool-wolverine": {
