@@ -241,38 +241,32 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Rebecca Hall",
         role: "Dr. Ilene Andrews",
-        image:
-          "/cast/Rebecca-Hall.png",
+        image: "/cast/Rebecca-Hall.png",
       },
       {
         name: "Millie Bobby Brown",
         role: "Madison Russell",
-        image:
-          "/cast/Millie-Bobby-Brown.png",
+        image: "/cast/Millie-Bobby-Brown.png",
       },
       {
         name: "Brian Tyree Henry",
         role: "Bernie Hayes",
-        image:
-          "/cast/Brian-Tyree-Henry.png",
+        image: "/cast/Brian-Tyree-Henry.png",
       },
       {
         name: "Dan Stevens",
         role: "Trapper",
-        image:
-          "/cast/Dan-Stevens.png",
+        image: "/cast/Dan-Stevens.png",
       },
       {
         name: "Kaylee Hottle",
         role: "Jia",
-        image:
-          "/cast/Kaylee-Hottle.png",
+        image: "/cast/Kaylee-Hottle.png",
       },
       {
         name: "Alex Ferns",
         role: "Mikael",
-        image:
-          "/cast/Alex-Ferns.png",
+        image: "/cast/Alex-Ferns.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/odM92ap8_c0",
@@ -281,9 +275,8 @@ export const moviesData: Record<string, Movie> = {
   "kung-fu-panda-4": {
     id: "kung-fu-panda-4",
     title: "Kung Fu Panda 4",
-    image: "/kung-fu-panda-4-poster.png",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=kung fu panda 4 movie scene",
+    image: "/movies/kung-fu-panda-4/poster.jpg",
+    backdrop: "/movies/kung-fu-panda-4/backdrop.jpg",
     rating: 7.3,
     duration: "94 min",
     releaseDate: "March 8, 2024",
@@ -296,41 +289,35 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Jack Black",
         role: "Po (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Jack Black actor headshot",
+        image: "/cast/Jack-Black.png",
       },
       {
         name: "Awkwafina",
         role: "Zhen (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Awkwafina actress headshot",
+        image: "/cast/Awkwafina.png",
       },
       {
         name: "Viola Davis",
         role: "Chameleon (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Viola Davis actress headshot",
+        image: "/cast/Viola-Davis.png",
       },
       {
         name: "Bryan Cranston",
         role: "Po's Birth Father (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Bryan Cranston actor headshot",
+        image: "/cast/Bryan-Cranston.png",
       },
       {
         name: "Dustin Hoffman",
         role: "Master Shifu (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Dustin Hoffman actor headshot",
+        image: "/cast/Dustin-Hoffman.png",
       },
       {
         name: "James Hong",
         role: "Mr. Ping (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=James Hong actor headshot",
+        image: "/cast/James-Hong.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/HiYHZMIzKVA",
+    trailerUrl: "https://www.youtube.com/embed/_inKs4eeHiI",
     alignment: "center",
   },
   "ghostbusters-frozen-empire": {
@@ -386,7 +373,8 @@ export const moviesData: Record<string, Movie> = {
           "/placeholder.svg?height=200&width=200&query=Dan Aykroyd actor headshot",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/gN3K-wYI-JQ",
+    trailerUrl: "https://www.youtube.com/embed/HpOBXh02rVc"
+,
     alignment: "center",
   },
   imaginary: {
