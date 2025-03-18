@@ -563,10 +563,8 @@ export const moviesData: Record<string, Movie> = {
   "inside-out-2": {
     id: "inside-out-2",
     title: "Inside Out 2",
-    image:
-      "/placeholder.svg?height=400&width=300&query=inside out 2 movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=inside out 2 movie scene",
+    image: "/movies/inside-out-2/portrait.jpg",
+    backdrop: "/movies/inside-out-2/backdrop.webp",
     rating: 8.2,
     duration: "96 min",
     releaseDate: "June 14, 2024",
@@ -577,44 +575,38 @@ export const moviesData: Record<string, Movie> = {
     director: "Kelsey Mann",
     cast: [
       {
-        name: "Amy Poehler",
-        role: "Joy (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Amy Poehler actress headshot",
+        name: "Ayo Edebiri",
+        role: "Envy (voice)",
+        image: "/cast/Ayo-Edebiri.png",
       },
       {
         name: "Maya Hawke",
         role: "Anxiety (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Maya Hawke actress headshot",
+        image: "/cast/Maya-Hawke.png",
       },
       {
         name: "Kensington Tallman",
         role: "Riley (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Kensington Tallman actress headshot",
+        image: "/cast/Kensington-Tallman.png",
       },
       {
         name: "Liza Lapira",
         role: "Disgust (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Liza Lapira actress headshot",
+        image: "/cast/Liza-Lapira.png",
       },
       {
         name: "Tony Hale",
         role: "Fear (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Tony Hale actor headshot",
+        image: "/cast/Tony-Hale.png",
       },
       {
-        name: "Lewis Black",
-        role: "Anger (voice)",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Lewis Black actor headshot",
+        name: "Adèle Exarchopoulos",
+        role: "Ennui (voice)",
+        image: "/cast/Adèle-Exarchopoulos.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/VnR9Ql5vscw",
-    alignment: "center",
+    trailerUrl: "https://www.youtube.com/embed/LEjhY15eCx0",
+    alignment: "bottom center",
   },
   "a-quiet-place-day-one": {
     id: "a-quiet-place-day-one",
