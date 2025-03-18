@@ -515,10 +515,8 @@ export const moviesData: Record<string, Movie> = {
   furiosa: {
     id: "furiosa",
     title: "Furiosa: A Mad Max Saga",
-    image:
-      "/placeholder.svg?height=400&width=300&query=furiosa mad max movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=furiosa mad max movie scene",
+    image: "/movies/furiosa/portrait.jpg",
+    backdrop: "/movies/furiosa/backdrop.jpg",
     rating: 8.5,
     duration: "148 min",
     releaseDate: "May 24, 2024",
@@ -531,42 +529,36 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Anya Taylor-Joy",
         role: "Furiosa",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Anya Taylor-Joy actress headshot",
+        image: "/cast/Anya-Taylor-Joy.png",
       },
       {
         name: "Chris Hemsworth",
         role: "Dementus",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Chris Hemsworth actor headshot",
+        image: "/cast/Chris-Hemsworth.png",
       },
       {
         name: "Tom Burke",
         role: "Jack",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Tom Burke actor headshot",
+        image: "/cast/Tom-Burke.png",
       },
       {
         name: "Alyla Browne",
         role: "Young Furiosa",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Alyla Browne actress headshot",
+        image: "/cast/Alyla-Browne.png",
       },
       {
         name: "Lachy Hulme",
         role: "Immortan Joe / General Praetorian Jack",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Lachy Hulme actor headshot",
+        image: "/cast/Lachy-Hulme.png",
       },
       {
-        name: "Nathan Jones",
-        role: "Rictus Erectus",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Nathan Jones actor headshot",
+        name: "Charlee Fraser",
+        role: "Mary Jabassa",
+        image: "/cast/Charlee-Fraser.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/XdKzUbAiswE",
-    alignment: "center",
+    trailerUrl: "https://www.youtube.com/embed/XJMuhwVlca4",
+    alignment: "top center",
   },
   "inside-out-2": {
     id: "inside-out-2",
