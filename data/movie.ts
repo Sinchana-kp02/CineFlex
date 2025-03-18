@@ -467,10 +467,8 @@ export const moviesData: Record<string, Movie> = {
   "deadpool-wolverine": {
     id: "deadpool-wolverine",
     title: "Deadpool & Wolverine",
-    image:
-      "/placeholder.svg?height=400&width=300&query=deadpool wolverine movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=deadpool wolverine movie scene",
+    image: "/movies/deadpool-wolverine/portrait.jpg",
+    backdrop: "/movies/deadpool-wolverine/backdrop.jpg",
     rating: 9.0,
     duration: "127 min",
     releaseDate: "July 26, 2024",
@@ -483,42 +481,36 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Ryan Reynolds",
         role: "Wade Wilson / Deadpool",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Ryan Reynolds actor headshot",
+        image: "/cast/Ryan-Reynolds.png",
       },
       {
         name: "Hugh Jackman",
         role: "Logan / Wolverine",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Hugh Jackman actor headshot",
+        image: "/cast/Hugh-Jackman.png",
       },
       {
         name: "Emma Corrin",
         role: "Cassandra Nova",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Emma Corrin actress headshot",
+        image: "/cast/Emma-Corrin.png",
       },
       {
         name: "Morena Baccarin",
         role: "Vanessa",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Morena Baccarin actress headshot",
+        image: "/cast/Morena-Baccarin.png",
       },
       {
         name: "Matthew Macfadyen",
         role: "Mr. Paradox",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Matthew Macfadyen actor headshot",
+        image: "/cast/Matthew-Macfadyen.png",
       },
       {
         name: "Rob Delaney",
         role: "Peter",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Rob Delaney actor headshot",
+        image: "/cast/Rob-Delaney.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/Yd47Z8HYf0Y",
-    alignment: "center",
+    trailerUrl: "https://www.youtube.com/embed/fl64VLxQ3qI",
+    alignment: "top center",
   },
   furiosa: {
     id: "furiosa",
