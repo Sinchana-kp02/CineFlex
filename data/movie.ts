@@ -187,38 +187,32 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Cillian Murphy",
         role: "J. Robert Oppenheimer",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Cillian Murphy actor headshot",
+        image: "/cast/Cillian-Murphy.png",
       },
       {
         name: "Emily Blunt",
         role: "Katherine Oppenheimer",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Emily Blunt actress headshot",
+        image: "/cast/Emily-Blunt.png",
       },
       {
         name: "Matt Damon",
         role: "Leslie Groves",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Matt Damon actor headshot",
+        image: "/cast/Matt-Damon.png",
       },
       {
         name: "Robert Downey Jr.",
         role: "Lewis Strauss",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Robert Downey Jr actor headshot",
+        image: "/cast/Robert-Downey-Jr..png",
       },
       {
         name: "Florence Pugh",
         role: "Jean Tatlock",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Florence Pugh actress headshot",
+        image: "/cast/Florence-Pugh.png",
       },
       {
         name: "Rami Malek",
         role: "Scientist",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Rami Malek actor headshot",
+        image: "/cast/Rami-Malek.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/uYPbbksJxIg",
