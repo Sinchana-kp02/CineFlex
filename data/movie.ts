@@ -173,8 +173,8 @@ export const moviesData: Record<string, Movie> = {
   oppenheimer: {
     id: "oppenheimer",
     title: "Oppenheimer",
-    image: "/movies/oppenheimer/poster.png",
-    backdrop: "/movies/oppenheimer/backdrop.png",
+    image: "/movies/oppenheimer/portrait.webp",
+    backdrop: "/movies/oppenheimer/landscape.jpg",
     rating: 8.5,
     duration: "180 min",
     releaseDate: "July 21, 2023",
@@ -611,10 +611,8 @@ export const moviesData: Record<string, Movie> = {
   "a-quiet-place-day-one": {
     id: "a-quiet-place-day-one",
     title: "A Quiet Place: Day One",
-    image:
-      "/placeholder.svg?height=400&width=300&query=a quiet place day one movie poster",
-    backdrop:
-      "/placeholder.svg?height=1080&width=1920&query=a quiet place day one movie scene",
+    image: "/movies/quite-place/portrait.jpg",
+    backdrop: "/movies/quite-place/backdrop.jpg",
     rating: 7.8,
     duration: "104 min",
     releaseDate: "June 28, 2024",
@@ -627,42 +625,36 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Lupita Nyong'o",
         role: "Sam",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Lupita Nyong'o actress headshot",
+        image: "/cast/Lupita-Nyong'o.png",
       },
       {
         name: "Joseph Quinn",
         role: "Eric",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Joseph Quinn actor headshot",
+        image: "/cast/Joseph-Quinn.png",
       },
       {
         name: "Alex Wolff",
         role: "Ethan",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Alex Wolff actor headshot",
+        image: "/cast/Alex-Wolff.png",
       },
       {
         name: "Djimon Hounsou",
         role: "Paris",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Djimon Hounsou actor headshot",
+        image: "/cast/Djimon-Hounsou.png",
       },
       {
-        name: "Amélie Hoeferle",
-        role: "Olivia",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Amélie Hoeferle actress headshot",
+        name: "Alexander John",
+        role: "Priest",
+        image: "/cast/Alexander-John.png",
       },
       {
-        name: "Phoebe Waller-Bridge",
+        name: "Thea Butler",
         role: "Cameo",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Phoebe Waller-Bridge actress headshot",
+        image: "/cast/Thea-Butler.png",
       },
     ],
-    trailerUrl: "https://www.youtube.com/embed/EIAa7kgGYC4",
-    alignment: "center",
+    trailerUrl: "https://www.youtube.com/embed/YPY7J-flzE8",
+    alignment: "top center",
   },
 };
 
