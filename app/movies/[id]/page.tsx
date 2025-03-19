@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Star,
@@ -7,8 +10,9 @@ import {
   Share2,
   Heart,
 } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import CastCrew from "@/components/cast-crew";
+import SeatCountModal from "@/components/seat-count-model";
 import { getMovieById } from "@/data/movie";
 
 export default function MovieDetailsPage({
@@ -17,6 +21,17 @@ export default function MovieDetailsPage({
   params: { id: string };
 }) {
   const movie = getMovieById(params.id);
+  const router = useRouter();
+  const [showSeatModal, setShowSeatModal] = useState(false);
+
+  const handleBookTickets = () => {
+    setShowSeatModal(true);
+  };
+
+  const handleSelectSeats = (seatCount: number) => {
+    // Navigate to booking page with seat count as query parameter
+    router.push(`/booking/${movie.id}?seats=${seatCount}`);
+  };
 
   return (
     <main className="flex-1">
@@ -24,10 +39,7 @@ export default function MovieDetailsPage({
       <div className="relative h-[50vh] md:h-[70vh] w-full">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${movie.backdrop})`,
-            backgroundPosition: movie.alignment,
-          }}
+          style={{ backgroundImage: `url(${movie.backdrop})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent" />
       </div>
@@ -46,15 +58,18 @@ export default function MovieDetailsPage({
             </div>
 
             <div className="mt-6 space-y-4">
-              <Button className="w-full bg-[#FC174D] hover:bg-[#d91341] text-white">
-                <Link href={`/booking/${movie.id}`}>Book Tickets</Link>
+              <Button
+                className="w-full bg-[#FC174D] hover:bg-[#d91341] text-white"
+                onClick={handleBookTickets}
+              >
+                Book Tickets
               </Button>
 
               <div className="flex gap-2">
                 <Button
                   variant="outline"
                   size="icon"
-                  className="flex-1 text-white border-zinc-700 bg-zinc-800 hover:bg-zinc-800"
+                  className="flex-1 text-white border-zinc-700 hover:bg-zinc-800"
                 >
                   <Heart className="h-5 w-5" />
                   <span className="sr-only">Add to Wishlist</span>
@@ -62,7 +77,7 @@ export default function MovieDetailsPage({
                 <Button
                   variant="outline"
                   size="icon"
-                  className="flex-1 text-white border-zinc-700 bg-zinc-800 hover:bg-zinc-800"
+                  className="flex-1 text-white border-zinc-700 hover:bg-zinc-800"
                 >
                   <Share2 className="h-5 w-5" />
                   <span className="sr-only">Share</span>
@@ -129,8 +144,11 @@ export default function MovieDetailsPage({
 
             {/* Mobile Book Button */}
             <div className="md:hidden mb-8">
-              <Button className="w-full bg-[#FC174D] hover:bg-[#d91341] text-white py-6 text-lg">
-                <Link href={`/booking/${movie.id}`}>Book Tickets</Link>
+              <Button
+                className="w-full bg-[#FC174D] hover:bg-[#d91341] text-white py-6 text-lg"
+                onClick={handleBookTickets}
+              >
+                Book Tickets
               </Button>
             </div>
 
@@ -167,7 +185,7 @@ export default function MovieDetailsPage({
                 </h2>
                 <Button
                   variant="outline"
-                  className="text-white border-zinc-700 bg-zinc-800 hover:bg-zinc-800"
+                  className="text-white border-zinc-700 hover:bg-zinc-800"
                 >
                   <MessageCircle className="h-4 w-4 mr-2" />
                   <span>Write a Review</span>
@@ -242,6 +260,14 @@ export default function MovieDetailsPage({
           </div>
         </div>
       </div>
+
+      {/* Seat Count Modal */}
+      <SeatCountModal
+        isOpen={showSeatModal}
+        onClose={() => setShowSeatModal(false)}
+        onSelectSeats={handleSelectSeats}
+        movieTitle={movie.title}
+      />
     </main>
   );
 }
