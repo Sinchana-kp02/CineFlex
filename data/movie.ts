@@ -119,8 +119,8 @@ export const moviesData: Record<string, Movie> = {
   "the-batman": {
     id: "the-batman",
     title: "The Batman",
-    image: "/movies/the-batman/poster.png",
-    backdrop: "/movies/the-batman/backdrop.png",
+    image: "/movies/the-batman/portrait.jpg",
+    backdrop: "/movies/the-batman/landscape.jpg",
     rating: 8.3,
     duration: "176 min",
     releaseDate: "March 4, 2022",
@@ -133,38 +133,32 @@ export const moviesData: Record<string, Movie> = {
       {
         name: "Robert Pattinson",
         role: "Bruce Wayne / Batman",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Robert Pattinson actor headshot",
+        image: "/cast/Robert-Pattinson.png",
       },
       {
         name: "Zoë Kravitz",
         role: "Selina Kyle / Catwoman",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Zoe Kravitz actress headshot",
+        image: "/cast/Zoë-Kravitz.png",
       },
       {
         name: "Paul Dano",
         role: "Edward Nashton / Riddler",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Paul Dano actor headshot",
+        image: "/cast/Paul-Dano.png",
       },
       {
         name: "Jeffrey Wright",
         role: "James Gordon",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Jeffrey Wright actor headshot",
+        image: "/cast/Jeffrey-Wright.png",
       },
       {
         name: "Colin Farrell",
         role: "Oz Cobb / Penguin",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Colin Farrell actor headshot",
+        image: "/cast/Colin-Farrell.png",
       },
       {
         name: "Andy Serkis",
         role: "Alfred Pennyworth",
-        image:
-          "/placeholder.svg?height=200&width=200&query=Andy Serkis actor headshot",
+        image: "/cast/Andy-Serkis.png",
       },
     ],
     trailerUrl: "https://www.youtube.com/embed/mqqft2x_Aa4",
