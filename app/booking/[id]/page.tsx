@@ -73,6 +73,8 @@ export default function BookingPage({ params }: { params: { id: string } }) {
   const [selectedShowtime, setSelectedShowtime] = useState(showtimes[3].time);
   const [selectedSeats, setSelectedSeats] = useState<string[]>([]);
   const [step, setStep] = useState(1);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] =
+    useState("credit-card");
 
   // Auto-select seats based on the requested count from the modal
   useEffect(() => {
@@ -446,17 +448,34 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                       Payment Method
                     </h3>
                     <div className="space-y-4">
-                      <div className="border border-zinc-700 rounded-lg p-4 flex items-center cursor-pointer">
+                      <div
+                        className={cn(
+                          "border rounded-lg p-4 flex items-center cursor-pointer transition-all",
+                          selectedPaymentMethod === "credit-card"
+                            ? "border-[#FC174D] bg-zinc-800"
+                            : "border-zinc-700 hover:border-zinc-600"
+                        )}
+                        onClick={() => setSelectedPaymentMethod("credit-card")}
+                      >
                         <div className="w-6 h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3">
-                          <div className="w-3 h-3 rounded-full bg-[#FC174D]"></div>
+                          <div
+                            className={cn(
+                              "w-3 h-3 rounded-full transition-all",
+                              selectedPaymentMethod === "credit-card"
+                                ? "bg-[#FC174D]"
+                                : "bg-transparent"
+                            )}
+                          ></div>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center">
-                            <img
-                              src="/placeholder.svg?height=30&width=40&query=credit card icon"
-                              alt="Credit Card"
-                              className="h-6 mr-2"
-                            />
+                            <div className="w-12 h-8 bg-white rounded-md flex items-center justify-center mr-3">
+                              <img
+                                src="/images/mastercard-logo.png"
+                                alt="Mastercard"
+                                className="h-6 object-contain"
+                              />
+                            </div>
                             <span className="text-white">
                               Credit/Debit Card
                             </span>
@@ -464,33 +483,67 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                         </div>
                       </div>
 
-                      <div className="border border-zinc-800 rounded-lg p-4 flex items-center cursor-pointer">
-                        <div className="w-6 h-6 rounded-full border-2 border-zinc-700 flex items-center justify-center mr-3">
-                          <div className="w-3 h-3 rounded-full bg-transparent"></div>
+                      <div
+                        className={cn(
+                          "border rounded-lg p-4 flex items-center cursor-pointer transition-all",
+                          selectedPaymentMethod === "paypal"
+                            ? "border-[#FC174D] bg-zinc-800"
+                            : "border-zinc-700 hover:border-zinc-600"
+                        )}
+                        onClick={() => setSelectedPaymentMethod("paypal")}
+                      >
+                        <div className="w-6 h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3">
+                          <div
+                            className={cn(
+                              "w-3 h-3 rounded-full transition-all",
+                              selectedPaymentMethod === "paypal"
+                                ? "bg-[#FC174D]"
+                                : "bg-transparent"
+                            )}
+                          ></div>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center">
-                            <img
-                              src="/placeholder.svg?height=30&width=40&query=paypal icon"
-                              alt="PayPal"
-                              className="h-6 mr-2"
-                            />
+                            <div className="w-12 h-8 bg-white rounded-md flex items-center justify-center mr-3">
+                              <img
+                                src="/images/paypal-logo.png"
+                                alt="PayPal"
+                                className="h-5 object-contain"
+                              />
+                            </div>
                             <span className="text-white">PayPal</span>
                           </div>
                         </div>
                       </div>
 
-                      <div className="border border-zinc-800 rounded-lg p-4 flex items-center cursor-pointer">
-                        <div className="w-6 h-6 rounded-full border-2 border-zinc-700 flex items-center justify-center mr-3">
-                          <div className="w-3 h-3 rounded-full bg-transparent"></div>
+                      <div
+                        className={cn(
+                          "border rounded-lg p-4 flex items-center cursor-pointer transition-all",
+                          selectedPaymentMethod === "apple-pay"
+                            ? "border-[#FC174D] bg-zinc-800"
+                            : "border-zinc-700 hover:border-zinc-600"
+                        )}
+                        onClick={() => setSelectedPaymentMethod("apple-pay")}
+                      >
+                        <div className="w-6 h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3">
+                          <div
+                            className={cn(
+                              "w-3 h-3 rounded-full transition-all",
+                              selectedPaymentMethod === "apple-pay"
+                                ? "bg-[#FC174D]"
+                                : "bg-transparent"
+                            )}
+                          ></div>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center">
-                            <img
-                              src="/placeholder.svg?height=30&width=40&query=apple pay icon"
-                              alt="Apple Pay"
-                              className="h-6 mr-2"
-                            />
+                            <div className="w-12 h-8 bg-white rounded-md flex items-center justify-center mr-3">
+                              <img
+                                src="/images/apple-pay-logo.png"
+                                alt="Apple Pay"
+                                className="h-5 object-contain"
+                              />
+                            </div>
                             <span className="text-white">Apple Pay</span>
                           </div>
                         </div>
@@ -498,57 +551,120 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                     </div>
                   </div>
 
-                  <div className="border-t border-zinc-800 pt-6">
-                    <h3 className="text-lg font-medium text-white mb-4">
-                      Card Details
-                    </h3>
-                    <div className="space-y-4">
-                      <div>
-                        <label className="block text-sm text-gray-400 mb-2">
-                          Card Number
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="1234 5678 9012 3456"
-                          className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
-                        />
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
+                  {selectedPaymentMethod === "credit-card" && (
+                    <div className="border-t border-zinc-800 pt-6">
+                      <h3 className="text-lg font-medium text-white mb-4">
+                        Card Details
+                      </h3>
+                      <div className="space-y-4">
                         <div>
                           <label className="block text-sm text-gray-400 mb-2">
-                            Expiry Date
+                            Card Number
                           </label>
                           <input
                             type="text"
-                            placeholder="MM/YY"
+                            placeholder="1234 5678 9012 3456"
                             className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
                           />
                         </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-sm text-gray-400 mb-2">
+                              Expiry Date
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="MM/YY"
+                              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
+                            />
+                          </div>
+                          <div>
+                            <label className="block text-sm text-gray-400 mb-2">
+                              CVV
+                            </label>
+                            <input
+                              type="text"
+                              placeholder="123"
+                              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
+                            />
+                          </div>
+                        </div>
+
                         <div>
                           <label className="block text-sm text-gray-400 mb-2">
-                            CVV
+                            Name on Card
                           </label>
                           <input
                             type="text"
-                            placeholder="123"
+                            placeholder="John Doe"
                             className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
                           />
                         </div>
-                      </div>
-
-                      <div>
-                        <label className="block text-sm text-gray-400 mb-2">
-                          Name on Card
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="John Doe"
-                          className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
-                        />
                       </div>
                     </div>
-                  </div>
+                  )}
+
+                  {selectedPaymentMethod === "paypal" && (
+                    <div className="border-t border-zinc-800 pt-6">
+                      <div className="text-center py-8">
+                        <div className="w-16 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4">
+                          <img
+                            src="/images/paypal-logo.png"
+                            alt="PayPal"
+                            className="h-8 object-contain"
+                          />
+                        </div>
+                        <h3 className="text-lg font-medium text-white mb-2">
+                          PayPal Payment
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-4">
+                          You will be redirected to PayPal to complete your
+                          payment securely.
+                        </p>
+                        <div className="text-sm text-gray-400">
+                          Total:{" "}
+                          <span className="text-white font-medium">
+                            $
+                            {(
+                              selectedSeats.length * 12.99 +
+                              selectedSeats.length * 1.5
+                            ).toFixed(2)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedPaymentMethod === "apple-pay" && (
+                    <div className="border-t border-zinc-800 pt-6">
+                      <div className="text-center py-8">
+                        <div className="w-16 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4">
+                          <img
+                            src="/images/apple-pay-logo.png"
+                            alt="Apple Pay"
+                            className="h-8 object-contain"
+                          />
+                        </div>
+                        <h3 className="text-lg font-medium text-white mb-2">
+                          Apple Pay
+                        </h3>
+                        <p className="text-gray-400 text-sm mb-4">
+                          Use Touch ID or Face ID to pay with Apple Pay.
+                        </p>
+                        <div className="text-sm text-gray-400">
+                          Total:{" "}
+                          <span className="text-white font-medium">
+                            $
+                            {(
+                              selectedSeats.length * 12.99 +
+                              selectedSeats.length * 1.5
+                            ).toFixed(2)}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
