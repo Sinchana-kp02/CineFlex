@@ -1,44 +1,89 @@
-"use client"
-import { cn } from "@/lib/utils"
+"use client";
+import { useMemo } from "react";
+import { cn } from "@/lib/utils";
 
 interface SeatSelectionProps {
-  selectedSeats: string[]
-  onSeatSelect: (seatId: string) => void
+  selectedSeats: string[];
+  onSeatSelect: (seatId: string) => void;
 }
 
-// Generate a mock seating layout
+// Generate a consistent seating layout
 const generateSeatingLayout = () => {
-  const rows = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K"]
-  const seatsPerRow = 14
-  const layout: { id: string; type: "regular" | "vip" | "taken" | "disabled" }[][] = []
+  const rows = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K"];
+  const seatsPerRow = 14;
+  const layout: {
+    id: string;
+    type: "regular" | "vip" | "taken" | "disabled";
+  }[][] = [];
+
+  // Predefined taken seats for consistency
+  const takenSeats = new Set([
+    "A3",
+    "A12",
+    "B5",
+    "B9",
+    "C2",
+    "C13",
+    "D7",
+    "D10",
+    "E1",
+    "E14",
+    "F3",
+    "F8",
+    "G5",
+    "G12",
+    "H2",
+    "H9",
+    "J6",
+    "J13",
+    "K4",
+    "K10",
+  ]);
 
   rows.forEach((row) => {
-    const rowSeats: { id: string; type: "regular" | "vip" | "taken" | "disabled" }[] = []
+    const rowSeats: {
+      id: string;
+      type: "regular" | "vip" | "taken" | "disabled";
+    }[] = [];
 
     for (let i = 1; i <= seatsPerRow; i++) {
-      // Add some randomness to taken seats
-      const isTaken = Math.random() < 0.2
-      // Make the last two rows VIP
-      const isVip = row === "J" || row === "K"
-      // Add gaps in the middle
-      const isDisabled = i === 4 || i === 11
+      const seatId = `${row}${i}`;
 
-      const type = isDisabled ? "disabled" : isTaken ? "taken" : isVip ? "vip" : "regular"
+      // Check if this seat is in our predefined taken seats
+      const isTaken = takenSeats.has(seatId);
+
+      // Make the last two rows VIP
+      const isVip = row === "J" || row === "K";
+
+      // Add gaps in the middle (aisles)
+      const isDisabled = i === 4 || i === 11;
+
+      const type = isDisabled
+        ? "disabled"
+        : isTaken
+        ? "taken"
+        : isVip
+        ? "vip"
+        : "regular";
 
       rowSeats.push({
-        id: `${row}${i}`,
+        id: seatId,
         type,
-      })
+      });
     }
 
-    layout.push(rowSeats)
-  })
+    layout.push(rowSeats);
+  });
 
-  return layout
-}
+  return layout;
+};
 
-export default function SeatSelection({ selectedSeats, onSeatSelect }: SeatSelectionProps) {
-  const seatingLayout = generateSeatingLayout()
+export default function SeatSelection({
+  selectedSeats,
+  onSeatSelect,
+}: SeatSelectionProps) {
+  // Use useMemo to ensure the seating layout is generated only once and remains constant
+  const seatingLayout = useMemo(() => generateSeatingLayout(), []);
 
   return (
     <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
@@ -57,23 +102,38 @@ export default function SeatSelection({ selectedSeats, onSeatSelect }: SeatSelec
             </div>
 
             <div className="flex gap-1">
-              {row.map((seat, seatIndex) => (
-                <button
-                  key={`${rowIndex}-${seatIndex}`}
-                  disabled={seat.type === "taken" || seat.type === "disabled"}
-                  className={cn(
-                    "seat w-7 h-7 flex items-center justify-center text-xs rounded",
-                    seat.type === "disabled" && "opacity-0 cursor-default",
-                    seat.type === "taken" && "seat-taken bg-zinc-700 text-zinc-500",
-                    seat.type === "vip" && "seat-vip border-2 border-[#FC174D]",
-                    seat.type !== "taken" && seat.type !== "disabled" && "bg-zinc-800 text-gray-300 hover:bg-zinc-700",
-                    selectedSeats.includes(seat.id) && "seat-selected bg-[#FC174D] text-white",
-                  )}
-                  onClick={() => seat.type !== "taken" && seat.type !== "disabled" && onSeatSelect(seat.id)}
-                >
-                  {seat.type !== "disabled" && seat.id.substring(1)}
-                </button>
-              ))}
+              {row.map((seat, seatIndex) => {
+                const isSelected = selectedSeats.includes(seat.id);
+                const isDisabled =
+                  seat.type === "taken" || seat.type === "disabled";
+
+                return (
+                  <button
+                    key={`${rowIndex}-${seatIndex}`}
+                    disabled={isDisabled}
+                    className={cn(
+                      "seat w-7 h-7 flex items-center justify-center text-xs rounded transition-all duration-200",
+                      seat.type === "disabled" && "opacity-0 cursor-default",
+                      seat.type === "taken" &&
+                        "seat-taken bg-zinc-700 text-zinc-500 cursor-not-allowed",
+                      seat.type === "vip" &&
+                        !isSelected &&
+                        "seat-vip border-2 border-[#FC174D] bg-zinc-800 text-gray-300 hover:bg-zinc-700",
+                      seat.type === "regular" &&
+                        !isSelected &&
+                        "bg-zinc-800 text-gray-300 hover:bg-zinc-700",
+                      isSelected &&
+                        "seat-selected bg-[#FC174D] text-white scale-110",
+                      seat.type === "vip" &&
+                        isSelected &&
+                        "seat-selected bg-[#FC174D] text-white border-2 border-[#FC174D] scale-110"
+                    )}
+                    onClick={() => !isDisabled && onSeatSelect(seat.id)}
+                  >
+                    {seat.type !== "disabled" && seat.id.substring(1)}
+                  </button>
+                );
+              })}
             </div>
 
             <div className="w-6 text-center text-sm text-gray-400 font-medium">
@@ -103,5 +163,5 @@ export default function SeatSelection({ selectedSeats, onSeatSelect }: SeatSelec
         </div>
       </div>
     </div>
-  )
+  );
 }

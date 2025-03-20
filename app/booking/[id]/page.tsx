@@ -6,6 +6,7 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 import SeatSelection from "@/components/seat-selection";
 import BookingSummary from "@/components/booking-summary";
 import { cn } from "@/lib/utils";
+import { getMovieById } from "@/data/movie";
 
 // Mock data for theaters
 const theaters = [
@@ -58,20 +59,9 @@ const showtimes = [
   { time: "10:45 PM", format: "2D" },
 ];
 
-// Get movie details
-const getMovieDetails = (id: string) => {
-  return {
-    id,
-    title: id === "dune-part-two" ? "Dune: Part Two" : "Movie Title",
-    image: `/placeholder.svg?height=600&width=400&query=${id} movie poster`,
-    rating: 8.7,
-    duration: "166 min",
-    releaseDate: "March 1, 2024",
-  };
-};
-
 export default function BookingPage({ params }: { params: { id: string } }) {
-  const movie = getMovieDetails(params.id);
+  // Get the actual movie data using the ID from the URL
+  const movie = getMovieById(params.id);
   const dates = generateDates();
   const searchParams = useSearchParams();
   const requestedSeats = searchParams.get("seats");
@@ -111,10 +101,19 @@ export default function BookingPage({ params }: { params: { id: string } }) {
   }, [requestedSeats]);
 
   const handleSeatSelection = (seatId: string) => {
+    const maxSeats = requestedSeats ? Number.parseInt(requestedSeats) : 10;
+
     if (selectedSeats.includes(seatId)) {
+      // Always allow deselecting a seat
       setSelectedSeats(selectedSeats.filter((id) => id !== seatId));
     } else {
-      if (selectedSeats.length < 10) {
+      // If we're at the limit, replace the first selected seat with the new one
+      if (selectedSeats.length >= maxSeats) {
+        // Remove the first seat and add the new one (FIFO - First In, First Out)
+        const newSeats = [...selectedSeats.slice(1), seatId];
+        setSelectedSeats(newSeats);
+      } else {
+        // Add seat normally if under the limit
         setSelectedSeats([...selectedSeats, seatId]);
       }
     }
@@ -371,7 +370,29 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                         ({selectedSeats.length} of {requestedSeats} selected)
                       </span>
                     )}
+                    {!requestedSeats && selectedSeats.length > 0 && (
+                      <span className="text-sm text-gray-400 ml-2">
+                        ({selectedSeats.length} selected)
+                      </span>
+                    )}
                   </h2>
+                  {requestedSeats && (
+                    <div className="mb-4 p-3 bg-blue-900/30 border border-blue-700 rounded-lg">
+                      <p className="text-blue-400 text-sm">
+                        💡 <strong>Tip:</strong> Click on any available seat to
+                        swap your selection. You can select exactly{" "}
+                        {requestedSeats} seat
+                        {Number.parseInt(requestedSeats) !== 1 ? "s" : ""}.
+                        {selectedSeats.length >=
+                          Number.parseInt(requestedSeats) && (
+                          <span className="block mt-1 text-green-400">
+                            ✓ Perfect! You have selected all {requestedSeats}{" "}
+                            seats.
+                          </span>
+                        )}
+                      </p>
+                    </div>
+                  )}
                   <SeatSelection
                     selectedSeats={selectedSeats}
                     onSeatSelect={handleSeatSelection}
