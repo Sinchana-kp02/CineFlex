@@ -150,7 +150,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
   return (
     <main className="flex-1 bg-black overflow-x-hidden">
       {/* Booking Header */}
-      <div className="bg-zinc-900 border-b border-zinc-800">
+      <div className="m-2 rounded-lg bg-zinc-900 border-b border-zinc-800">
         <div className="container px-4 md:px-6 py-4 max-w-full overflow-hidden">
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="w-12 h-16 sm:w-16 sm:h-24 rounded overflow-hidden hidden sm:block flex-shrink-0">
