@@ -148,12 +148,12 @@ export default function BookingPage({ params }: { params: { id: string } }) {
   };
 
   return (
-    <main className="flex-1 bg-black">
+    <main className="flex-1 bg-black overflow-x-hidden">
       {/* Booking Header */}
       <div className="bg-zinc-900 border-b border-zinc-800">
-        <div className="container px-4 md:px-6 py-4">
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-24 rounded overflow-hidden hidden sm:block">
+        <div className="container px-4 md:px-6 py-4 max-w-full overflow-hidden">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-12 h-16 sm:w-16 sm:h-24 rounded overflow-hidden hidden sm:block flex-shrink-0">
               <img
                 src={movie.image || "/placeholder.svg"}
                 alt={movie.title}
@@ -161,22 +161,25 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               />
             </div>
 
-            <div>
-              <h1 className="text-xl md:text-2xl font-bold text-white">
+            <div className="min-w-0 flex-1">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white break-words">
                 {movie.title}
               </h1>
-              <div className="flex items-center gap-3 text-sm text-gray-400 mt-1">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-400 mt-1">
                 <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-1" />
+                  <Clock className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                   <span>{movie.duration}</span>
                 </div>
                 <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1" />
-                  <span>{movie.releaseDate}</span>
+                  <Calendar className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                  <span className="hidden sm:inline">{movie.releaseDate}</span>
+                  <span className="sm:hidden">
+                    {movie.releaseDate.split(",")[0]}
+                  </span>
                 </div>
                 {requestedSeats && (
                   <div className="flex items-center text-[#FC174D]">
-                    <span>{requestedSeats} seats requested</span>
+                    <span>{requestedSeats} seats</span>
                   </div>
                 )}
               </div>
@@ -184,11 +187,11 @@ export default function BookingPage({ params }: { params: { id: string } }) {
           </div>
 
           {/* Booking Steps */}
-          <div className="flex items-center mt-6">
+          <div className="flex items-center mt-4 sm:mt-6">
             <div className="flex items-center">
               <div
                 className={cn(
-                  "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium",
                   step >= 1
                     ? "bg-[#FC174D] text-white"
                     : "bg-zinc-800 text-gray-400"
@@ -198,7 +201,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               </div>
               <span
                 className={cn(
-                  "ml-2 text-sm font-medium hidden sm:inline",
+                  "ml-2 text-xs sm:text-sm font-medium hidden sm:inline",
                   step >= 1 ? "text-white" : "text-gray-400"
                 )}
               >
@@ -206,12 +209,12 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               </span>
             </div>
 
-            <div className="w-12 sm:w-24 h-px bg-zinc-700 mx-2 sm:mx-4"></div>
+            <div className="w-8 sm:w-12 md:w-24 h-px bg-zinc-700 mx-2 sm:mx-4"></div>
 
             <div className="flex items-center">
               <div
                 className={cn(
-                  "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium",
                   step >= 2
                     ? "bg-[#FC174D] text-white"
                     : "bg-zinc-800 text-gray-400"
@@ -221,7 +224,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               </div>
               <span
                 className={cn(
-                  "ml-2 text-sm font-medium hidden sm:inline",
+                  "ml-2 text-xs sm:text-sm font-medium hidden sm:inline",
                   step >= 2 ? "text-white" : "text-gray-400"
                 )}
               >
@@ -229,12 +232,12 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               </span>
             </div>
 
-            <div className="w-12 sm:w-24 h-px bg-zinc-700 mx-2 sm:mx-4"></div>
+            <div className="w-8 sm:w-12 md:w-24 h-px bg-zinc-700 mx-2 sm:mx-4"></div>
 
             <div className="flex items-center">
               <div
                 className={cn(
-                  "w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium",
+                  "w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium",
                   step >= 3
                     ? "bg-[#FC174D] text-white"
                     : "bg-zinc-800 text-gray-400"
@@ -244,7 +247,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
               </div>
               <span
                 className={cn(
-                  "ml-2 text-sm font-medium hidden sm:inline",
+                  "ml-2 text-xs sm:text-sm font-medium hidden sm:inline",
                   step >= 3 ? "text-white" : "text-gray-400"
                 )}
               >
@@ -256,15 +259,15 @@ export default function BookingPage({ params }: { params: { id: string } }) {
       </div>
 
       {/* Booking Content */}
-      <div className="container px-4 md:px-6 py-8">
-        <div className="grid lg:grid-cols-[1fr_350px] gap-8">
+      <div className="container px-4 md:px-6 py-6 sm:py-8 max-w-full overflow-hidden">
+        <div className="grid lg:grid-cols-[1fr_350px] gap-6 lg:gap-8 w-full min-w-0">
           {/* Main Booking Area */}
-          <div>
+          <div className="min-w-0 w-full">
             {step === 1 && (
               <>
                 {/* Theater Selection */}
-                <div className="mb-8">
-                  <h2 className="text-xl font-semibold text-white mb-4">
+                <div className="mb-6 sm:mb-8">
+                  <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                     Select Theater
                   </h2>
                   <div className="grid gap-3">
@@ -272,7 +275,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                       <div
                         key={theater.id}
                         className={cn(
-                          "border rounded-lg p-4 cursor-pointer transition-all",
+                          "border rounded-lg p-3 sm:p-4 cursor-pointer transition-all",
                           selectedTheater === theater.id
                             ? "border-[#FC174D] bg-zinc-900"
                             : "border-zinc-800 bg-zinc-900/50 hover:border-zinc-700"
@@ -280,16 +283,18 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                         onClick={() => setSelectedTheater(theater.id)}
                       >
                         <div className="flex items-start justify-between">
-                          <div>
-                            <h3 className="font-medium text-white">
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-medium text-white text-sm sm:text-base break-words">
                               {theater.name}
                             </h3>
-                            <div className="flex items-center text-sm text-gray-400 mt-1">
-                              <MapPin className="h-4 w-4 mr-1" />
-                              <span>{theater.location}</span>
+                            <div className="flex items-center text-xs sm:text-sm text-gray-400 mt-1">
+                              <MapPin className="h-3 w-3 sm:h-4 sm:w-4 mr-1 flex-shrink-0" />
+                              <span className="break-words">
+                                {theater.location}
+                              </span>
                             </div>
                           </div>
-                          <span className="text-sm text-gray-400">
+                          <span className="text-xs sm:text-sm text-gray-400 ml-2 flex-shrink-0">
                             {theater.distance}
                           </span>
                         </div>
@@ -299,17 +304,17 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                 </div>
 
                 {/* Date Selection */}
-                <div className="mb-8">
-                  <h2 className="text-xl font-semibold text-white mb-4">
+                <div className="mb-6 sm:mb-8">
+                  <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                     Select Date
                   </h2>
-                  <div className="flex overflow-x-auto pb-2 scrollbar-hide -mx-2 px-2">
-                    <div className="flex gap-3">
+                  <div className="overflow-x-auto pb-2 -mx-4 px-4">
+                    <div className="flex gap-3 min-w-max">
                       {dates.map((date, index) => (
                         <div
                           key={index}
                           className={cn(
-                            "flex-shrink-0 w-20 h-24 border rounded-lg flex flex-col items-center justify-center cursor-pointer transition-all",
+                            "flex-shrink-0 w-16 h-20 sm:w-20 sm:h-24 border rounded-lg flex flex-col items-center justify-center cursor-pointer transition-all",
                             selectedDate === date.date.toDateString()
                               ? "border-[#FC174D] bg-zinc-900"
                               : "border-zinc-800 bg-zinc-900/50 hover:border-zinc-700"
@@ -318,13 +323,13 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                             setSelectedDate(date.date.toDateString())
                           }
                         >
-                          <span className="text-sm text-gray-400">
+                          <span className="text-xs text-gray-400">
                             {date.day}
                           </span>
-                          <span className="text-xl font-bold text-white mt-1">
+                          <span className="text-lg sm:text-xl font-bold text-white mt-1">
                             {date.dayNum}
                           </span>
-                          <span className="text-sm text-gray-400 mt-1">
+                          <span className="text-xs text-gray-400 mt-1">
                             {date.month}
                           </span>
                         </div>
@@ -334,16 +339,16 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                 </div>
 
                 {/* Showtime Selection */}
-                <div className="mb-8">
-                  <h2 className="text-xl font-semibold text-white mb-4">
+                <div className="mb-6 sm:mb-8">
+                  <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                     Select Showtime
                   </h2>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3">
                     {showtimes.map((showtime, index) => (
                       <div
                         key={index}
                         className={cn(
-                          "border rounded-lg px-4 py-3 cursor-pointer transition-all",
+                          "border rounded-lg px-3 py-3 sm:px-4 cursor-pointer transition-all",
                           selectedShowtime === showtime.time
                             ? "border-[#FC174D] bg-zinc-900"
                             : "border-zinc-800 bg-zinc-900/50 hover:border-zinc-700"
@@ -351,7 +356,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                         onClick={() => setSelectedShowtime(showtime.time)}
                       >
                         <div className="text-center">
-                          <span className="font-medium text-white">
+                          <span className="font-medium text-white text-sm sm:text-base">
                             {showtime.time}
                           </span>
                           <div className="text-xs text-gray-400 mt-1">
@@ -365,7 +370,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
                 {/* Seat Selection */}
                 <div>
-                  <h2 className="text-xl font-semibold text-white mb-4">
+                  <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                     Select Seats
                     {requestedSeats && (
                       <span className="text-sm text-gray-400 ml-2">
@@ -405,38 +410,52 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
             {step === 2 && (
               <div>
-                <h2 className="text-xl font-semibold text-white mb-4">
+                <h2 className="text-lg sm:text-xl font-semibold text-white mb-4">
                   Payment
                 </h2>
-                <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
+                <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-4 sm:p-6">
                   <div className="mb-6">
-                    <h3 className="text-lg font-medium text-white mb-4">
+                    <h3 className="text-base sm:text-lg font-medium text-white mb-4">
                       Booking Details
                     </h3>
                     <div className="space-y-3">
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Movie:</span>
-                        <span className="text-white font-medium">
+                        <span className="text-gray-400 text-sm sm:text-base">
+                          Movie:
+                        </span>
+                        <span className="text-white font-medium text-sm sm:text-base break-words text-right">
                           {movie.title}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Theater:</span>
-                        <span className="text-white">
+                        <span className="text-gray-400 text-sm sm:text-base">
+                          Theater:
+                        </span>
+                        <span className="text-white text-sm sm:text-base break-words text-right">
                           {getSelectedTheaterName()}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Date:</span>
-                        <span className="text-white">{getFormattedDate()}</span>
+                        <span className="text-gray-400 text-sm sm:text-base">
+                          Date:
+                        </span>
+                        <span className="text-white text-sm sm:text-base break-words text-right">
+                          {getFormattedDate()}
+                        </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Time:</span>
-                        <span className="text-white">{selectedShowtime}</span>
+                        <span className="text-gray-400 text-sm sm:text-base">
+                          Time:
+                        </span>
+                        <span className="text-white text-sm sm:text-base">
+                          {selectedShowtime}
+                        </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Seats:</span>
-                        <span className="text-white">
+                        <span className="text-gray-400 text-sm sm:text-base">
+                          Seats:
+                        </span>
+                        <span className="text-white text-sm sm:text-base break-words text-right">
                           {selectedSeats.join(", ")}
                         </span>
                       </div>
@@ -444,39 +463,39 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                   </div>
 
                   <div className="border-t border-zinc-800 pt-6 mb-6">
-                    <h3 className="text-lg font-medium text-white mb-4">
+                    <h3 className="text-base sm:text-lg font-medium text-white mb-4">
                       Payment Method
                     </h3>
                     <div className="space-y-4">
                       <div
                         className={cn(
-                          "border rounded-lg p-4 flex items-center cursor-pointer transition-all",
+                          "border rounded-lg p-3 sm:p-4 flex items-center cursor-pointer transition-all",
                           selectedPaymentMethod === "credit-card"
                             ? "border-[#FC174D] bg-zinc-800"
                             : "border-zinc-700 hover:border-zinc-600"
                         )}
                         onClick={() => setSelectedPaymentMethod("credit-card")}
                       >
-                        <div className="w-6 h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3 flex-shrink-0">
                           <div
                             className={cn(
-                              "w-3 h-3 rounded-full transition-all",
+                              "w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all",
                               selectedPaymentMethod === "credit-card"
                                 ? "bg-[#FC174D]"
                                 : "bg-transparent"
                             )}
                           ></div>
                         </div>
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <div className="flex items-center">
-                            <div className="w-12 h-8 bg-white rounded-md flex items-center justify-center mr-3">
+                            <div className="w-10 h-6 sm:w-12 sm:h-8 bg-white rounded-md flex items-center justify-center mr-3 flex-shrink-0">
                               <img
                                 src="/images/mastercard-logo.png"
                                 alt="Mastercard"
-                                className="h-6 object-contain"
+                                className="h-4 sm:h-6 object-contain"
                               />
                             </div>
-                            <span className="text-white">
+                            <span className="text-white text-sm sm:text-base">
                               Credit/Debit Card
                             </span>
                           </div>
@@ -485,66 +504,70 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
                       <div
                         className={cn(
-                          "border rounded-lg p-4 flex items-center cursor-pointer transition-all",
+                          "border rounded-lg p-3 sm:p-4 flex items-center cursor-pointer transition-all",
                           selectedPaymentMethod === "paypal"
                             ? "border-[#FC174D] bg-zinc-800"
                             : "border-zinc-700 hover:border-zinc-600"
                         )}
                         onClick={() => setSelectedPaymentMethod("paypal")}
                       >
-                        <div className="w-6 h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3 flex-shrink-0">
                           <div
                             className={cn(
-                              "w-3 h-3 rounded-full transition-all",
+                              "w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all",
                               selectedPaymentMethod === "paypal"
                                 ? "bg-[#FC174D]"
                                 : "bg-transparent"
                             )}
                           ></div>
                         </div>
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <div className="flex items-center">
-                            <div className="w-12 h-8 bg-white rounded-md flex items-center justify-center mr-3">
+                            <div className="w-10 h-6 sm:w-12 sm:h-8 bg-white rounded-md flex items-center justify-center mr-3 flex-shrink-0">
                               <img
                                 src="/images/paypal-logo.png"
                                 alt="PayPal"
-                                className="h-5 object-contain"
+                                className="h-3 sm:h-5 object-contain"
                               />
                             </div>
-                            <span className="text-white">PayPal</span>
+                            <span className="text-white text-sm sm:text-base">
+                              PayPal
+                            </span>
                           </div>
                         </div>
                       </div>
 
                       <div
                         className={cn(
-                          "border rounded-lg p-4 flex items-center cursor-pointer transition-all",
+                          "border rounded-lg p-3 sm:p-4 flex items-center cursor-pointer transition-all",
                           selectedPaymentMethod === "apple-pay"
                             ? "border-[#FC174D] bg-zinc-800"
                             : "border-zinc-700 hover:border-zinc-600"
                         )}
                         onClick={() => setSelectedPaymentMethod("apple-pay")}
                       >
-                        <div className="w-6 h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 border-[#FC174D] flex items-center justify-center mr-3 flex-shrink-0">
                           <div
                             className={cn(
-                              "w-3 h-3 rounded-full transition-all",
+                              "w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all",
                               selectedPaymentMethod === "apple-pay"
                                 ? "bg-[#FC174D]"
                                 : "bg-transparent"
                             )}
                           ></div>
                         </div>
-                        <div className="flex-1">
+                        <div className="flex-1 min-w-0">
                           <div className="flex items-center">
-                            <div className="w-12 h-8 bg-white rounded-md flex items-center justify-center mr-3">
+                            <div className="w-10 h-6 sm:w-12 sm:h-8 bg-white rounded-md flex items-center justify-center mr-3 flex-shrink-0">
                               <img
                                 src="/images/apple-pay-logo.png"
                                 alt="Apple Pay"
-                                className="h-5 object-contain"
+                                className="h-3 sm:h-5 object-contain"
                               />
                             </div>
-                            <span className="text-white">Apple Pay</span>
+                            <span className="text-white text-sm sm:text-base">
+                              Apple Pay
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -553,7 +576,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
                   {selectedPaymentMethod === "credit-card" && (
                     <div className="border-t border-zinc-800 pt-6">
-                      <h3 className="text-lg font-medium text-white mb-4">
+                      <h3 className="text-base sm:text-lg font-medium text-white mb-4">
                         Card Details
                       </h3>
                       <div className="space-y-4">
@@ -564,7 +587,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                           <input
                             type="text"
                             placeholder="1234 5678 9012 3456"
-                            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
+                            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
                           />
                         </div>
 
@@ -576,7 +599,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                             <input
                               type="text"
                               placeholder="MM/YY"
-                              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
+                              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
                             />
                           </div>
                           <div>
@@ -586,7 +609,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                             <input
                               type="text"
                               placeholder="123"
-                              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
+                              className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
                             />
                           </div>
                         </div>
@@ -598,7 +621,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                           <input
                             type="text"
                             placeholder="John Doe"
-                            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
+                            className="w-full bg-zinc-800 border border-zinc-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-white text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#FC174D] focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -607,15 +630,15 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
                   {selectedPaymentMethod === "paypal" && (
                     <div className="border-t border-zinc-800 pt-6">
-                      <div className="text-center py-8">
-                        <div className="w-16 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <div className="text-center py-6 sm:py-8">
+                        <div className="w-12 h-8 sm:w-16 sm:h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4">
                           <img
                             src="/images/paypal-logo.png"
                             alt="PayPal"
-                            className="h-8 object-contain"
+                            className="h-6 sm:h-8 object-contain"
                           />
                         </div>
-                        <h3 className="text-lg font-medium text-white mb-2">
+                        <h3 className="text-base sm:text-lg font-medium text-white mb-2">
                           PayPal Payment
                         </h3>
                         <p className="text-gray-400 text-sm mb-4">
@@ -638,15 +661,15 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
                   {selectedPaymentMethod === "apple-pay" && (
                     <div className="border-t border-zinc-800 pt-6">
-                      <div className="text-center py-8">
-                        <div className="w-16 h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <div className="text-center py-6 sm:py-8">
+                        <div className="w-12 h-8 sm:w-16 sm:h-12 bg-white rounded-lg flex items-center justify-center mx-auto mb-4">
                           <img
                             src="/images/apple-pay-logo.png"
                             alt="Apple Pay"
-                            className="h-8 object-contain"
+                            className="h-6 sm:h-8 object-contain"
                           />
                         </div>
-                        <h3 className="text-lg font-medium text-white mb-2">
+                        <h3 className="text-base sm:text-lg font-medium text-white mb-2">
                           Apple Pay
                         </h3>
                         <p className="text-gray-400 text-sm mb-4">
@@ -671,7 +694,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
           </div>
 
           {/* Booking Summary */}
-          <div>
+          <div className="w-full lg:w-auto">
             <BookingSummary
               movie={movie}
               theater={getSelectedTheaterName()}
